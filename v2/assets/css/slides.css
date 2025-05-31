@@ -6,9 +6,8 @@ body {
 }
 
 .slide-container {
-    max-width: 1400px;
+    width: 100%;
     min-height: 100vh;
-    margin: 0 auto;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
     position: relative;
     overflow: hidden;
@@ -21,28 +20,24 @@ body {
 /* Responsive breakpoints */
 @media (max-width: 1440px) {
     .slide-container {
-        max-width: 1200px;
         padding: 1.5rem 1rem;
     }
 }
 
 @media (max-width: 1200px) {
     .slide-container {
-        max-width: 1024px;
         padding: 1.5rem 0.75rem;
     }
 }
 
 @media (max-width: 1024px) {
     .slide-container {
-        max-width: 768px;
         padding: 1rem 0.5rem;
     }
 }
 
 @media (max-width: 768px) {
     .slide-container {
-        max-width: 100%;
         padding: 1rem 0.5rem;
         min-height: 100vh;
     }

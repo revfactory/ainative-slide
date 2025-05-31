@@ -49,120 +49,6 @@
             0%, 100% { opacity: 0.5; }
             50% { opacity: 1; }
         }
-        .slide-number {
-            position: absolute;
-            bottom: 1rem;
-            right: 1rem;
-            font-size: 1rem;
-            color: #666;
-            font-weight: 600;
-        }
-        
-        @media (min-width: 768px) {
-            .slide-number {
-                bottom: 2.5rem;
-                right: 2.5rem;
-                font-size: 1.125rem;
-            }
-        }
-        
-        /* Maintain aspect ratio for floating elements on smaller screens */
-        @media (max-width: 768px) {
-            .floating-orb, .floating-orb-2 {
-                transform: scale(0.6) !important;
-            }
-        }        
-        /* Navigation Buttons */
-        .nav-container {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            display: flex;
-            gap: 0.5rem;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid #333;
-            border-radius: 16px;
-            padding: 0.75rem;
-        }
-        
-        .nav-btn {
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
-            color: #fff;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .nav-btn:hover {
-            background: linear-gradient(135deg, #FEE500 0%, #FFD700 100%);
-            color: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(254, 229, 0, 0.3);
-        }
-        
-        .nav-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        
-        .nav-btn:disabled:hover {
-            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
-            color: #fff;
-        }
-        
-        .home-btn {
-            background: linear-gradient(135deg, #581c87 0%, #6b21a8 100%);
-        }
-        
-        .home-btn:hover {
-            background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
-            color: #fff;
-        }
-        
-        .slide-counter {
-            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
-            border: 1px solid #4b5563;
-            border-radius: 8px;
-            padding: 0.5rem 0.75rem;
-            color: #FEE500;
-            font-size: 0.85rem;
-            font-weight: 600;
-            min-width: 60px;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                top: 1rem;
-                right: 1rem;
-                padding: 0.5rem;
-                gap: 0.25rem;
-            }
-            
-            .nav-btn {
-                width: 35px;
-                height: 35px;
-                font-size: 0.8rem;
-            }
-            
-            .slide-counter {
-                padding: 0.4rem 0.6rem;
-                font-size: 0.75rem;
-                min-width: 50px;
-            }
-        }
         .synergy-orbit {
             position: relative;
             width: 300px;
@@ -298,7 +184,7 @@
         </button>
     </div>
 
-    <div class="slide-container p-20">
+    <div class="slide-container">
         <!-- Header -->
         <div class="text-center mb-16">
             <h1 class="text-6xl font-black mb-6">
@@ -306,7 +192,7 @@
             </h1>
             <p class="text-2xl font-light text-gray-300">단순한 도구 사용을 넘어선 진정한 지적 파트너십</p>
         </div>
-        
+
         <!-- Collaboration Process Flow -->
         <div class="grid grid-cols-4 gap-8 mb-16">
             <!-- Human Input -->
@@ -318,7 +204,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white">인간의 창의성</h3>
                 </div>
-                
+
                 <div class="space-y-3">
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 직관적 사고</p>
@@ -334,7 +220,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- AI Processing -->
             <div class="synergy-card bg-gray-900 rounded-3xl p-8 collaboration-flow">
                 <div class="text-center mb-6">
@@ -343,7 +229,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white">AI의 분석력</h3>
                 </div>
-                
+
                 <div class="space-y-3">
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 대용량 처리</p>
@@ -359,7 +245,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Collaborative Synthesis -->
             <div class="synergy-card bg-gray-900 rounded-3xl p-8 collaboration-flow">
                 <div class="text-center mb-6">
@@ -368,7 +254,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white">협력적 종합</h3>
                 </div>
-                
+
                 <div class="space-y-3">
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 다관점 통합</p>
@@ -384,7 +270,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Enhanced Output -->
             <div class="synergy-card bg-gray-900 rounded-3xl p-8">
                 <div class="text-center mb-6">
@@ -393,7 +279,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-white">증강된 결과</h3>
                 </div>
-                
+
                 <div class="space-y-3">
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 혁신적 솔루션</p>
@@ -410,7 +296,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Collaboration Scenarios & Synergy Model -->
         <div class="grid grid-cols-2 gap-12 mb-16">
             <!-- Synergy Orbit Model -->
@@ -421,37 +307,37 @@
                     </div>
                     <h3 class="text-3xl font-bold text-white mb-4">협력적 지능 생태계</h3>
                 </div>
-                
+
                 <div class="flex justify-center mb-8">
                     <div class="synergy-orbit">
                         <div class="synergy-center">
                             <i class="fas fa-brain text-3xl text-white"></i>
                         </div>
-                        
+
                         <div class="synergy-element human-element">
                             <i class="fas fa-user text-white"></i>
                         </div>
-                        
+
                         <div class="synergy-element ai-element">
                             <i class="fas fa-robot text-white"></i>
                         </div>
-                        
+
                         <div class="synergy-element data-element">
                             <i class="fas fa-database text-white"></i>
                         </div>
-                        
+
                         <div class="synergy-element insight-element">
                             <i class="fas fa-lightbulb text-white"></i>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="text-center">
                     <h4 class="text-xl font-semibold text-white mb-4">상호 의존적 생태계</h4>
                     <p class="text-gray-300 text-sm">인간의 창의성, AI의 분석력, 데이터의 가치, 인사이트의 순환이 만들어내는 지속적 혁신 시스템</p>
                 </div>
             </div>
-            
+
             <!-- Collaborative Scenarios -->
             <div class="synergy-card bg-gray-900 rounded-3xl p-10">
                 <div class="text-center mb-8">
@@ -460,7 +346,7 @@
                     </div>
                     <h3 class="text-3xl font-bold text-white mb-4">실제 협력 시나리오</h3>
                 </div>
-                
+
                 <div class="space-y-6">
                     <div class="collaborative-scenario">
                         <div class="scenario-step">전략 기획</div>
@@ -471,7 +357,7 @@
                             <div>⚡ <strong>시너지:</strong> 데이터 기반 직관 검증과 창의적 전략 수립</div>
                         </div>
                     </div>
-                    
+
                     <div class="intelligence-amplifier">
                         <div class="scenario-step">문제 해결</div>
                         <h4 class="text-lg font-semibold text-white mb-2">복잡한 시스템 이슈 해결</h4>
@@ -481,7 +367,7 @@
                             <div>⚡ <strong>시너지:</strong> 신속하고 정확한 근본 원인 파악과 대응</div>
                         </div>
                     </div>
-                    
+
                     <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-cyan-500">
                         <div class="scenario-step">창의적 설계</div>
                         <h4 class="text-lg font-semibold text-white mb-2">사용자 경험 혁신</h4>
@@ -494,7 +380,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Collaboration Impact Metrics -->
         <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-12 border border-purple-500">
             <div class="text-center">
@@ -519,10 +405,10 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Slide Number -->
         <div class="slide-number">28</div>
-        
+
         <!-- Bottom Accent Bar -->
         <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
     </div>
