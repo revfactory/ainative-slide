@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인간-AI 협력적 지능과 시너지</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .slide-container {
+            width: 1920px;
+            height: 1080px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 50%, #FFA500 100%);
+        }
+        .synergy-card {
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+        }
+        .synergy-card:hover {
+            transform: translateY(-5px);
+            border-color: #a855f7;
+            box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
+        }
+        .collaboration-flow {
+            position: relative;
+        }
+        .collaboration-flow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -35px;
+            width: 35px;
+            height: 3px;
+            background: linear-gradient(90deg, #a855f7, #8b5cf6);
+            transform: translateY(-50%);
+            animation: collaboration 2.5s infinite;
+        }
+        .collaboration-flow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -45px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #8b5cf6;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            transform: translateY(-50%);
+        }
+        @keyframes collaboration {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 18px;
+            color: #666;
+            font-weight: 600;
+        }
+        .synergy-orbit {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 2px solid #a855f7;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0f0f23 100%);
+        }
+        .synergy-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        .synergy-element {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            animation: orbit 10s linear infinite;
+        }
+        .human-element {
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            animation-delay: 0s;
+        }
+        .ai-element {
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            animation-delay: -5s;
+        }
+        .data-element {
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            animation-delay: -2.5s;
+        }
+        .insight-element {
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            animation-delay: -7.5s;
+        }
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+        }
+        .collaborative-scenario {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 2px solid #8b5cf6;
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+        }
+        .scenario-step {
+            background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .intelligence-amplifier {
+            background: linear-gradient(135deg, #581c87 0%, #6b21a8 100%);
+            border: 2px solid #a855f7;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 8px 0;
+        }
+        .collaboration-metric {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .synergy-indicator {
+            position: relative;
+            display: inline-block;
+        }
+        .synergy-pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            border: 2px solid #a855f7;
+            border-radius: 50%;
+            animation: synergyPulse 2s infinite;
+            opacity: 0;
+        }
+        @keyframes synergyPulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-20">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-black mb-6">
+                <span class="text-purple-400">인간-AI</span> <span class="kakao-yellow">협력적 지능</span>
+            </h1>
+            <p class="text-2xl font-light text-gray-300">단순한 도구 사용을 넘어선 진정한 지적 파트너십</p>
+        </div>
+        
+        <!-- Collaboration Process Flow -->
+        <div class="grid grid-cols-4 gap-8 mb-16">
+            <!-- Human Input -->
+            <div class="synergy-card bg-gray-900 rounded-3xl p-8 collaboration-flow">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4 synergy-indicator">
+                        <div class="synergy-pulse"></div>
+                        <i class="fas fa-user text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">인간의 창의성</h3>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 직관적 사고</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 맥락적 이해</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 창의적 질문</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 윤리적 판단</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Processing -->
+            <div class="synergy-card bg-gray-900 rounded-3xl p-8 collaboration-flow">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-cyan-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-microchip text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">AI의 분석력</h3>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 대용량 처리</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 패턴 인식</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 객관적 분석</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 신속한 연산</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Collaborative Synthesis -->
+            <div class="synergy-card bg-gray-900 rounded-3xl p-8 collaboration-flow">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">협력적 종합</h3>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 다관점 통합</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 반복적 개선</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 상호 보완</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 시너지 창출</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Output -->
+            <div class="synergy-card bg-gray-900 rounded-3xl p-8">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-2xl text-black"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">증강된 결과</h3>
+                </div>
+                
+                <div class="space-y-3">
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 혁신적 솔루션</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 전략적 통찰</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 최적화 결과</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-xl p-3">
+                        <p class="text-gray-300 text-sm">• 가치 창출</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collaboration Scenarios & Synergy Model -->
+        <div class="grid grid-cols-2 gap-12 mb-16">
+            <!-- Synergy Orbit Model -->
+            <div class="synergy-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-atom text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">협력적 지능 생태계</h3>
+                </div>
+                
+                <div class="flex justify-center mb-8">
+                    <div class="synergy-orbit">
+                        <div class="synergy-center">
+                            <i class="fas fa-brain text-3xl text-white"></i>
+                        </div>
+                        
+                        <div class="synergy-element human-element">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        
+                        <div class="synergy-element ai-element">
+                            <i class="fas fa-robot text-white"></i>
+                        </div>
+                        
+                        <div class="synergy-element data-element">
+                            <i class="fas fa-database text-white"></i>
+                        </div>
+                        
+                        <div class="synergy-element insight-element">
+                            <i class="fas fa-lightbulb text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="text-xl font-semibold text-white mb-4">상호 의존적 생태계</h4>
+                    <p class="text-gray-300 text-sm">인간의 창의성, AI의 분석력, 데이터의 가치, 인사이트의 순환이 만들어내는 지속적 혁신 시스템</p>
+                </div>
+            </div>
+            
+            <!-- Collaborative Scenarios -->
+            <div class="synergy-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-emerald-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-users-cog text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">실제 협력 시나리오</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="collaborative-scenario">
+                        <div class="scenario-step">전략 기획</div>
+                        <h4 class="text-lg font-semibold text-white mb-2">신규 비즈니스 모델 개발</h4>
+                        <div class="text-gray-300 text-sm space-y-1">
+                            <div>👤 <strong>인간:</strong> 시장 기회 직감, 사용자 니즈 파악</div>
+                            <div>🤖 <strong>AI:</strong> 시장 데이터 분석, 경쟁사 동향 종합</div>
+                            <div>⚡ <strong>시너지:</strong> 데이터 기반 직관 검증과 창의적 전략 수립</div>
+                        </div>
+                    </div>
+                    
+                    <div class="intelligence-amplifier">
+                        <div class="scenario-step">문제 해결</div>
+                        <h4 class="text-lg font-semibold text-white mb-2">복잡한 시스템 이슈 해결</h4>
+                        <div class="text-gray-300 text-sm space-y-1">
+                            <div>👤 <strong>인간:</strong> 맥락적 이해, 우선순위 설정</div>
+                            <div>🤖 <strong>AI:</strong> 로그 분석, 패턴 탐지, 해결책 제안</div>
+                            <div>⚡ <strong>시너지:</strong> 신속하고 정확한 근본 원인 파악과 대응</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-cyan-500">
+                        <div class="scenario-step">창의적 설계</div>
+                        <h4 class="text-lg font-semibold text-white mb-2">사용자 경험 혁신</h4>
+                        <div class="text-gray-300 text-sm space-y-1">
+                            <div>👤 <strong>인간:</strong> 공감적 이해, 감성적 디자인</div>
+                            <div>🤖 <strong>AI:</strong> 사용 패턴 분석, A/B 테스트 최적화</div>
+                            <div>⚡ <strong>시너지:</strong> 감성과 데이터가 조화된 혁신적 UX</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collaboration Impact Metrics -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-12 border border-purple-500">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-8">협력적 지능의 임팩트</h2>
+                <div class="grid grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="collaboration-metric mb-2">10배</div>
+                        <p class="text-gray-300">문제 해결 속도</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="collaboration-metric mb-2">400%</div>
+                        <p class="text-gray-300">창의적 아이디어 증가</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="collaboration-metric mb-2">75%</div>
+                        <p class="text-gray-300">의사결정 정확도</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="collaboration-metric mb-2">∞</div>
+                        <p class="text-gray-300">학습과 진화 가능성</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Number -->
+        <div class="slide-number">28</div>
+        
+        <!-- Bottom Accent Bar -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
+    </div>
+</body>
+</html>

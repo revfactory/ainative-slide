@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴면 데이터의 숨겨진 가치</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .slide-container {
+            width: 1920px;
+            height: 1080px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 50%, #FFA500 100%);
+        }
+        .hidden-value-card {
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+            position: relative;
+        }
+        .hidden-value-card:hover {
+            transform: translateY(-5px);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15);
+        }
+        .dormant-indicator {
+            background: #ef4444;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .value-potential {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 18px;
+            color: #666;
+            font-weight: 600;
+        }
+        .transformation-arrow {
+            position: relative;
+        }
+        .transformation-arrow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #ef4444, #10b981);
+            transform: translateY(-50%);
+        }
+        .transformation-arrow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #10b981;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-20">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-black mb-6">
+                <span class="text-red-400">휴면 데이터</span>의 <span class="kakao-yellow">숨겨진 가치</span>
+            </h1>
+            <p class="text-2xl font-light text-gray-300">AI Native 전환의 결정적 기회로 전환하기</p>
+        </div>
+        
+        <!-- Dormant Data Categories -->
+        <div class="grid grid-cols-3 gap-8 mb-16">
+            <!-- Historical Data -->
+            <div class="hidden-value-card bg-gray-900 rounded-3xl p-8 relative">
+                <div class="dormant-indicator">휴면</div>
+                <div class="text-center mb-6">
+                    <div class="w-20 h-20 bg-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-history text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">이력 데이터</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">사용자 행동 이력</h4>
+                        <p class="text-gray-300 text-sm">2-3년 간의 사용자 상호작용 데이터</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">서비스 로그</h4>
+                        <p class="text-gray-300 text-sm">과거 서비스 사용 패턴과 성능 데이터</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">비즈니스 메트릭</h4>
+                        <p class="text-gray-300 text-sm">과거 KPI와 성과 측정 데이터</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unstructured Data -->
+            <div class="hidden-value-card bg-gray-900 rounded-3xl p-8 relative">
+                <div class="dormant-indicator">휴면</div>
+                <div class="text-center mb-6">
+                    <div class="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-alt text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">비정형 데이터</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">이미지 데이터</h4>
+                        <p class="text-gray-300 text-sm">서비스 내 업로드된 이미지와 미디어</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">텍스트 데이터</h4>
+                        <p class="text-gray-300 text-sm">채팅, 리뷰, 게시글 등 비정형 텍스트</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">문서 데이터</h4>
+                        <p class="text-gray-300 text-sm">내부 문서, 매뉴얼, 지식 데이터베이스</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cross-Service Data -->
+            <div class="hidden-value-card bg-gray-900 rounded-3xl p-8 relative">
+                <div class="dormant-indicator">휴면</div>
+                <div class="text-center mb-6">
+                    <div class="w-20 h-20 bg-green-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-network-wired text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">서비스 간 데이터</h3>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">사용자 여정 데이터</h4>
+                        <p class="text-gray-300 text-sm">여러 서비스에 걸친 사용자 행동</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">단절된 연결</h4>
+                        <p class="text-gray-300 text-sm">서비스 간 연결되지 않은 데이터</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-2xl p-4">
+                        <h4 class="text-lg font-semibold text-white mb-2">통합 기회</h4>
+                        <p class="text-gray-300 text-sm">크로스 서비스 인사이트 창출 가능</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Value Transformation Process -->
+        <div class="mb-16">
+            <h2 class="text-4xl font-bold text-center text-white mb-12">
+                가치 전환 <span class="kakao-yellow">프로세스</span>
+            </h2>
+            
+            <div class="grid grid-cols-5 gap-6 items-center">
+                <!-- Before: Dormant -->
+                <div class="text-center transformation-arrow">
+                    <div class="w-20 h-20 bg-red-600 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bed text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-red-400 mb-2">휴면 상태</h4>
+                    <p class="text-gray-400 text-sm">비용만 발생</p>
+                </div>
+                
+                <!-- Step 1: Discovery -->
+                <div class="text-center transformation-arrow">
+                    <div class="w-20 h-20 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">데이터 발견</h4>
+                    <p class="text-gray-300 text-sm">자산 식별</p>
+                </div>
+                
+                <!-- Step 2: Processing -->
+                <div class="text-center transformation-arrow">
+                    <div class="w-20 h-20 bg-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cogs text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">데이터 가공</h4>
+                    <p class="text-gray-300 text-sm">AI 기반 처리</p>
+                </div>
+                
+                <!-- Step 3: Integration -->
+                <div class="text-center transformation-arrow">
+                    <div class="w-20 h-20 bg-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-link text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">시스템 통합</h4>
+                    <p class="text-gray-300 text-sm">접근 가능한 형태</p>
+                </div>
+                
+                <!-- After: Active Asset -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-600 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gem text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-green-400 mb-2">활성 자산</h4>
+                    <p class="text-gray-300 text-sm">가치 창출</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Potential Value Impact -->
+        <div class="grid grid-cols-2 gap-12">
+            <!-- Quantitative Impact -->
+            <div class="bg-gray-900 rounded-3xl p-10 border border-gray-700">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-green-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-bar text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">예상 계량적 효과</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 rounded-2xl p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-lg text-white font-semibold">데이터 활용도</span>
+                            <span class="value-potential">+40%</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">현재 30%에서 70%로 증가</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-lg text-white font-semibold">인사이트 창출 속도</span>
+                            <span class="value-potential">+60%</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">데이터 접근성 향상으로</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-lg text-white font-semibold">운영 비용 절감</span>
+                            <span class="value-potential">-30%</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">중복 데이터 저장 비용 감소</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Strategic Impact -->
+            <div class="bg-gray-900 rounded-3xl p-10 border border-gray-700">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 gradient-accent rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-3xl text-black"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">전략적 기회</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-yellow-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-users text-yellow-400 mr-3"></i>
+                            360도 고객 인사이트
+                        </h4>
+                        <p class="text-gray-300">서비스 간 데이터 통합으로 완전한 고객 이해</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-blue-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-lightbulb text-blue-400 mr-3"></i>
+                            신규 사업 기회
+                        </h4>
+                        <p class="text-gray-300">숨겨진 패턴 발견으로 새로운 비즈니스 모델 개발</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-green-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-shield-alt text-green-400 mr-3"></i>
+                            경쟁 우위 확보
+                        </h4>
+                        <p class="text-gray-300">데이터 기반 의사결정으로 시장 대응력 강화</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Number -->
+        <div class="slide-number">12</div>
+        
+        <!-- Bottom Accent Bar -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
+    </div>
+</body>
+</html>

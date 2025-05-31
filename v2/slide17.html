@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Buddy: 개발자를 위한 AI 코딩 어시스턴트</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .slide-container {
+            width: 1920px;
+            height: 1080px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 50%, #FFA500 100%);
+        }
+        .code-buddy-card {
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+        }
+        .code-buddy-card:hover {
+            transform: translateY(-5px);
+            border-color: #10b981;
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.15);
+        }
+        .code-block {
+            background: #1f2937;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            color: #e5e7eb;
+            overflow-x: auto;
+        }
+        .code-highlight {
+            color: #10b981;
+            font-weight: bold;
+        }
+        .code-comment {
+            color: #6b7280;
+            font-style: italic;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 18px;
+            color: #666;
+            font-weight: 600;
+        }
+        .productivity-meter {
+            width: 100%;
+            height: 8px;
+            background: #374151;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        .productivity-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            border-radius: 4px;
+            transition: width 2s ease;
+        }
+        .before-fill {
+            width: 40%;
+        }
+        .after-fill {
+            width: 85%;
+        }
+        .feature-badge {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-20">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-black mb-6">
+                <span class="text-green-400">Code Buddy</span>: 개발자를 위한 <span class="kakao-yellow">AI 코딩 어시스턴트</span>
+            </h1>
+            <p class="text-2xl font-light text-gray-300">카카오 내부 데이터와 코드베이스를 활용한 지능형 개발 지원 도구</p>
+        </div>
+        
+        <!-- Code Buddy Overview -->
+        <div class="grid grid-cols-2 gap-12 mb-16">
+            <!-- Core Features -->
+            <div class="code-buddy-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-green-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">핵심 기능</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-green-500">
+                        <div class="feature-badge">코드 생성</div>
+                        <h4 class="text-xl font-semibold text-white mb-3">카카오 스타일 코드 생성</h4>
+                        <p class="text-gray-300 text-sm">카카오의 코딩 컨벤션과 베스트 프랙티스를 반영한 코드 자동 생성</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-blue-500">
+                        <div class="feature-badge">코드 리뷰</div>
+                        <h4 class="text-xl font-semibold text-white mb-3">지능형 코드 리뷰</h4>
+                        <p class="text-gray-300 text-sm">보안, 성능, 가독성 관점에서 코드를 분석하고 개선 방안 제안</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-purple-500">
+                        <div class="feature-badge">문서화</div>
+                        <h4 class="text-xl font-semibold text-white mb-3">자동 문서 생성</h4>
+                        <p class="text-gray-300 text-sm">API 문서, 코드 주석, 기술 명세서 자동 생성 및 업데이트</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-orange-500">
+                        <div class="feature-badge">디버깅</div>
+                        <h4 class="text-xl font-semibold text-white mb-3">스마트 디버깅</h4>
+                        <p class="text-gray-300 text-sm">오류 패턴 분석을 통한 버그 원인 파악 및 해결 방안 제시</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Code Example -->
+            <div class="code-buddy-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 gradient-accent rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-terminal text-3xl text-black"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">코드 생성 예시</h3>
+                </div>
+                
+                <!-- Code Generation Example -->
+                <div class="space-y-4">
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-3">💬 개발자 요청</h4>
+                        <div class="bg-gray-800 rounded-xl p-4">
+                            <p class="text-gray-300 text-sm italic">"카카오톡 메시지 발송 API를 호출하는 함수를 만들어주세요"</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-3">🤖 Code Buddy 생성 코드</h4>
+                        <div class="code-block">
+                            <span class="code-comment">// 카카오톡 메시지 발송 API 호출 함수</span><br/>
+                            <span class="code-highlight">async function</span> sendKakaoMessage(data) {<br/>
+                            &nbsp;&nbsp;<span class="code-highlight">try</span> {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-comment">// 카카오 내부 인증 헤더 설정</span><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-highlight">const</span> response = <span class="code-highlight">await</span> fetch(API_ENDPOINT, {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;method: <span class="text-yellow-400">'POST'</span>,<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers: {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">'Authorization'</span>: `Bearer ${getKakaoToken()}`,<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">'Content-Type'</span>: <span class="text-yellow-400">'application/json'</span><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;body: JSON.stringify(data)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-highlight">return</span> <span class="code-highlight">await</span> response.json();<br/>
+                            &nbsp;&nbsp;} <span class="code-highlight">catch</span> (error) {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;logger.error(<span class="text-yellow-400">'Message send failed'</span>, error);<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-highlight">throw</span> error;<br/>
+                            &nbsp;&nbsp;}<br/>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-900 rounded-xl p-4 border border-green-600">
+                        <h5 class="text-green-300 font-semibold mb-2">✅ Code Buddy 제안사항</h5>
+                        <ul class="text-green-200 text-sm space-y-1">
+                            <li>• 카카오 표준 에러 핸들링 적용</li>
+                            <li>• 내부 로깅 시스템 연동</li>
+                            <li>• 타입스크립트 인터페이스 자동 생성</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Productivity Impact -->
+        <div class="grid grid-cols-2 gap-12 mb-16">
+            <!-- Before/After Comparison -->
+            <div class="code-buddy-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-bar text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">생산성 향상</h3>
+                </div>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-4">Code Buddy 도입 전</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800 rounded-xl p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-300">코딩 시간</span>
+                                    <span class="text-red-400 font-bold">8시간</span>
+                                </div>
+                                <div class="productivity-meter">
+                                    <div class="bg-red-500 before-fill h-full rounded"></div>
+                                </div>
+                            </div>
+                            <ul class="text-gray-400 text-sm space-y-2">
+                                <li>• 반복적인 boilerplate 코드 작성</li>
+                                <li>• 문서 찾기 및 API 스펙 확인</li>
+                                <li>• 코드 리뷰 대기 시간</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-white mb-4">Code Buddy 도입 후</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800 rounded-xl p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-gray-300">실제 개발 시간</span>
+                                    <span class="text-green-400 font-bold">6.8시간</span>
+                                </div>
+                                <div class="productivity-meter">
+                                    <div class="bg-green-500 after-fill h-full rounded"></div>
+                                </div>
+                            </div>
+                            <ul class="text-gray-300 text-sm space-y-2">
+                                <li>• 자동 코드 생성으로 시간 단축</li>
+                                <li>• 즉시 사용 가능한 내부 API 가이드</li>
+                                <li>• 실시간 코드 품질 피드백</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Integration Benefits -->
+            <div class="code-buddy-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-puzzle-piece text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">카카오 시스템 통합</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-blue-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-database text-blue-400 mr-3"></i>
+                            내부 API 자동 연동
+                        </h4>
+                        <p class="text-gray-300 text-sm">카카오 내부 서비스 API 스펙을 실시간으로 반영하여 정확한 코드 생성</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-green-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-shield-alt text-green-400 mr-3"></i>
+                            보안 정책 자동 적용
+                        </h4>
+                        <p class="text-gray-300 text-sm">카카오 보안 가이드라인을 자동으로 적용한 안전한 코드 생성</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-purple-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-git-alt text-purple-400 mr-3"></i>
+                            Git 워크플로우 연동
+                        </h4>
+                        <p class="text-gray-300 text-sm">브랜치 전략, 커밋 메시지 규칙 등 카카오 개발 프로세스와 완전 통합</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-orange-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-chart-line text-orange-400 mr-3"></i>
+                            성능 모니터링 연동
+                        </h4>
+                        <p class="text-gray-300 text-sm">카카오 내부 모니터링 시스템과 연동하여 성능 최적화 코드 제안</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Results -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-12 border border-green-500">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-8">Code Buddy 도입 성과</h2>
+                <div class="grid grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-400 mb-2">15%</div>
+                        <p class="text-gray-300">개발 시간 단축</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">40%</div>
+                        <p class="text-gray-300">코드 리뷰 시간 감소</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-400 mb-2">95%</div>
+                        <p class="text-gray-300">개발자 만족도</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold kakao-yellow mb-2">60%</div>
+                        <p class="text-gray-300">버그 감소율</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Number -->
+        <div class="slide-number">17</div>
+        
+        <!-- Bottom Accent Bar -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
+    </div>
+</body>
+</html>

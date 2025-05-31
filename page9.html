@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 거버넌스와 AI 윤리</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .kakao-yellow-bg {
+            background-color: #FEE500;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+        }
+        .governance-card {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .governance-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        .trust-indicator {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: linear-gradient(135deg, #10b981, #34d399);
+            color: white;
+            font-size: 8px;
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+        }
+        .security-shield {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            animation: pulse-shield 2s infinite;
+        }
+        @keyframes pulse-shield {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        .ethics-framework {
+            border-left: 4px solid #FEE500;
+            background: linear-gradient(90deg, rgba(254, 229, 0, 0.1), transparent);
+        }
+        .floating-icon {
+            animation: float-gentle 2.5s ease-in-out infinite;
+        }
+        @keyframes float-gentle {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container gradient-bg relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-8 right-20 w-12 h-12 kakao-yellow-bg opacity-8 rounded-full floating-icon"></div>
+        <div class="absolute bottom-24 left-12 w-14 h-14 kakao-yellow-bg opacity-6 rounded-full floating-icon" style="animation-delay: 1.2s;"></div>
+        
+        <!-- Header -->
+        <div class="relative z-10 pt-6 pb-4 text-center">
+            <h1 class="text-4xl font-black text-gray-800 mb-2">
+                데이터 거버넌스와 <span class="kakao-yellow">AI 윤리</span>
+            </h1>
+            <p class="text-lg text-gray-600 font-medium">신뢰성 확보를 위한 책임 있는 AI 구현</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="relative z-10 px-8">
+            <!-- Trust Foundation -->
+            <div class="bg-white rounded-2xl p-5 shadow-lg mb-5">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-14 h-14 security-shield rounded-2xl flex items-center justify-center mr-4">
+                        <i class="fas fa-shield-alt text-2xl text-white"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">신뢰할 수 있는 AI Native 전환</h2>
+                        <p class="text-sm text-gray-600">거버넌스와 윤리가 뒷받침하는 지속 가능한 혁신</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center p-3 bg-blue-50 rounded-xl">
+                        <i class="fas fa-database text-blue-500 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-gray-800 text-sm">데이터 품질</h4>
+                        <p class="text-xs text-gray-600">정확성, 완전성, 일관성</p>
+                    </div>
+                    <div class="text-center p-3 bg-green-50 rounded-xl">
+                        <i class="fas fa-lock text-green-500 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-gray-800 text-sm">보안 관리</h4>
+                        <p class="text-xs text-gray-600">접근 통제, 암호화, 감사</p>
+                    </div>
+                    <div class="text-center p-3 bg-purple-50 rounded-xl">
+                        <i class="fas fa-balance-scale text-purple-500 text-2xl mb-2"></i>
+                        <h4 class="font-bold text-gray-800 text-sm">규정 준수</h4>
+                        <p class="text-xs text-gray-600">GDPR, 개인정보보호법</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kakao's Governance Approach -->
+            <div class="grid grid-cols-2 gap-6 mb-5">
+                <!-- Data Governance -->
+                <div class="governance-card bg-white rounded-2xl p-5 shadow-lg relative">
+                    <div class="trust-indicator">거버넌스</div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 kakao-yellow-bg rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-sitemap text-xl text-gray-800"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">데이터 거버넌스 체계</h3>
+                            
+                            <div class="space-y-3">
+                                <div class="ethics-framework p-3 rounded-lg">
+                                    <div class="flex items-center space-x-2 mb-1">
+                                        <i class="fas fa-catalog text-blue-500 text-sm"></i>
+                                        <span class="font-semibold text-sm text-gray-800">카카오클라우드 데이터 카탈로그</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600">중앙 집중식 메타데이터 관리 및 접근 통제</p>
+                                </div>
+                                
+                                <div class="ethics-framework p-3 rounded-lg">
+                                    <div class="flex items-center space-x-2 mb-1">
+                                        <i class="fas fa-users-cog text-green-500 text-sm"></i>
+                                        <span class="font-semibold text-sm text-gray-800">전담 거버넌스 팀</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600">데이터 과학자, 규정 준수, 법률 전문가</p>
+                                </div>
+                                
+                                <div class="ethics-framework p-3 rounded-lg">
+                                    <div class="flex items-center space-x-2 mb-1">
+                                        <i class="fas fa-search text-purple-500 text-sm"></i>
+                                        <span class="font-semibold text-sm text-gray-800">출처 추적 시스템</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600">데이터 계보 및 권한 명확화</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Ethics -->
+                <div class="governance-card bg-white rounded-2xl p-5 shadow-lg relative">
+                    <div class="trust-indicator">윤리</div>
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-brain text-xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">AI 윤리 프레임워크</h3>
+                            
+                            <div class="space-y-3">
+                                <div class="ethics-framework p-3 rounded-lg">
+                                    <div class="flex items-center space-x-2 mb-1">
+                                        <i class="fas fa-eye text-blue-500 text-sm"></i>
+                                        <span class="font-semibold text-sm text-gray-800">설명 가능한 AI (XAI)</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600">카카오뱅크, KAIST·SNU 협력 연구</p>
+                                </div>
+                                
+                                <div class="ethics-framework p-3 rounded-lg">
+                                    <div class="flex items-center space-x-2 mb-1">
+                                        <i class="fas fa-shield-check text-green-500 text-sm"></i>
+                                        <span class="font-semibold text-sm text-gray-800">카나나 세이프가드</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600">AI 안전성 및 편향 방지 모델</p>
+                                </div>
+                                
+                                <div class="ethics-framework p-3 rounded-lg">
+                                    <div class="flex items-center space-x-2 mb-1">
+                                        <i class="fas fa-user-shield text-purple-500 text-sm"></i>
+                                        <span class="font-semibold text-sm text-gray-800">개인정보 보호</span>
+                                    </div>
+                                    <p class="text-xs text-gray-600">데이터 익명화 및 프라이버시 강화</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Implementation Framework -->
+            <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl p-5 shadow-lg">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+                    책임 있는 AI 구현 <span class="text-gray-800">프레임워크</span>
+                </h3>
+                
+                <div class="grid grid-cols-5 gap-3">
+                    <div class="text-center p-3 bg-white bg-opacity-90 rounded-xl">
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-clipboard-check text-yellow-400 text-sm"></i>
+                        </div>
+                        <h4 class="font-bold text-xs text-gray-800">목표 정의</h4>
+                        <p class="text-xs text-gray-600">윤리적 AI 기준</p>
+                    </div>
+                    
+                    <div class="text-center p-3 bg-white bg-opacity-90 rounded-xl">
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-cog text-yellow-400 text-sm"></i>
+                        </div>
+                        <h4 class="font-bold text-xs text-gray-800">품질 관리</h4>
+                        <p class="text-xs text-gray-600">검증·정제·표준화</p>
+                    </div>
+                    
+                    <div class="text-center p-3 bg-white bg-opacity-90 rounded-xl">
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-lock text-yellow-400 text-sm"></i>
+                        </div>
+                        <h4 class="font-bold text-xs text-gray-800">보안 강화</h4>
+                        <p class="text-xs text-gray-600">암호화·접근통제</p>
+                    </div>
+                    
+                    <div class="text-center p-3 bg-white bg-opacity-90 rounded-xl">
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-chart-line text-yellow-400 text-sm"></i>
+                        </div>
+                        <h4 class="font-bold text-xs text-gray-800">지속 모니터링</h4>
+                        <p class="text-xs text-gray-600">성능·편향 추적</p>
+                    </div>
+                    
+                    <div class="text-center p-3 bg-white bg-opacity-90 rounded-xl">
+                        <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-graduation-cap text-yellow-400 text-sm"></i>
+                        </div>
+                        <h4 class="font-bold text-xs text-gray-800">교육·문화</h4>
+                        <p class="text-xs text-gray-600">윤리 인식 제고</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom decoration -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 kakao-yellow-bg opacity-80"></div>
+    </div>
+</body>
+</html>
+

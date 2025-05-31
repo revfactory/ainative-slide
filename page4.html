@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 자산화의 정의와 중요성</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .kakao-yellow-bg {
+            background-color: #FEE500;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+        }
+        .process-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .process-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        .process-arrow {
+            position: relative;
+        }
+        .process-arrow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -1.5rem;
+            width: 0;
+            height: 0;
+            border-left: 12px solid #FEE500;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            transform: translateY(-50%);
+        }
+        .floating-bg {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #FEE500 0%, #FFE066 100%);
+            color: #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container gradient-bg relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-16 right-24 w-32 h-32 kakao-yellow-bg opacity-8 rounded-full floating-bg"></div>
+        <div class="absolute bottom-16 left-16 w-24 h-24 kakao-yellow-bg opacity-5 rounded-full floating-bg" style="animation-delay: 3s;"></div>
+        
+        <!-- Header -->
+        <div class="relative z-10 pt-8 pb-4 text-center">
+            <h1 class="text-3xl font-black text-gray-800 mb-2">
+                <span class="kakao-yellow">데이터 자산화</span>의 정의와 전략적 중요성
+            </h1>
+            <p class="text-base text-gray-600 font-medium">AI Native 전환을 위한 핵심 동력과 경제적 가치 창출 프로세스</p>
+        </div>
+        
+        <!-- Main content -->
+        <div class="relative z-10 px-16">
+            <!-- Definition section -->
+            <div class="grid grid-cols-2 gap-6 mb-6">
+                <!-- Left: Definition -->
+                <div class="bg-white rounded-2xl p-5 shadow-lg border-l-4 border-yellow-400">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 kakao-yellow-bg rounded-xl flex items-center justify-center mr-3">
+                            <i class="fas fa-gem text-lg text-gray-800"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">데이터 자산화란?</h2>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="highlight-box p-3 rounded-lg mb-3">
+                            <p class="text-sm font-bold">데이터를 실질적인 경제적 가치로 변환하거나<br>상응하는 경제적 가치를 부여하는 과정</p>
+                        </div>
+                        
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-database text-yellow-500 mt-1 text-xs"></i>
+                                <p class="text-gray-700"><strong>토지, 자본, 기술과 함께</strong> 중요한 생산 요소로 부상</p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-chart-line text-yellow-500 mt-1 text-xs"></i>
+                                <p class="text-gray-700"><strong>시장 수요 이해, 제품 최적화</strong>로 핵심 경쟁력 강화</p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-lightbulb text-yellow-500 mt-1 text-xs"></i>
+                                <p class="text-gray-700"><strong>빅데이터 분석</strong>을 통한 시의적절한 통찰력 확보</p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-rocket text-yellow-500 mt-1 text-xs"></i>
+                                <p class="text-gray-700"><strong>다른 자원과 통합</strong>하여 새로운 비즈니스 모델 창출</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: AI Native와의 공생관계 -->
+                <div class="bg-white rounded-2xl p-5 shadow-lg border-l-4 border-blue-400">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center mr-3">
+                            <i class="fas fa-sync-alt text-lg text-white"></i>
+                        </div>
+                        <h2 class="text-xl font-bold text-gray-800">AI Native와 공생관계</h2>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <div class="bg-blue-50 p-3 rounded-lg mb-2">
+                            <p class="text-xs font-bold text-blue-800 mb-1">"AI 시스템의 효과는 활용하는 데이터에 따라 결정"</p>
+                            <p class="text-xs text-blue-600">데이터는 AI의 연료와 같은 역할</p>
+                        </div>
+                        
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-database text-blue-500 mt-1 text-xs"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">데이터 품질 = AI 성능</p>
+                                    <p class="text-gray-600">고품질의 관련성 높은 데이터가 정확한 AI 필수</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-arrows-alt text-blue-500 mt-1 text-xs"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">선순환 구조</p>
+                                    <p class="text-gray-600">AI 도구가 데이터 자산화 과정 자체를 개선</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-gem text-blue-500 mt-1 text-xs"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">진정한 자산 가치</p>
+                                    <p class="text-gray-600">데이터를 단순 입력이 아닌 자산으로 인식</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-cogs text-blue-500 mt-1 text-xs"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">지식 기반 생태계</p>
+                                    <p class="text-gray-600">AI Native 구현의 기본 토대 제공</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Challenge and Solution section -->
+            <div class="bg-white rounded-2xl p-5 shadow-lg mb-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-3 text-center">
+                    데이터 자산화의 <span class="kakao-yellow">도전과 해결</span>
+                </h3>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Left: Challenges -->
+                    <div class="bg-red-50 rounded-xl p-4 border border-red-200">
+                        <h4 class="font-bold text-red-700 text-sm mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>주요 도전과제
+                        </h4>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-red-400 mt-1" style="font-size: 6px;"></i>
+                                <p class="text-gray-700"><strong>데이터 시장 부상:</strong> 가격 책정, 소유권, 거래 규칙의 명확화 필요</p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-red-400 mt-1" style="font-size: 6px;"></i>
+                                <p class="text-gray-700"><strong>품질 측정:</strong> 모델 성능을 위한 새로운 AI Native 프리미티브 필요</p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-red-400 mt-1" style="font-size: 6px;"></i>
+                                <p class="text-gray-700"><strong>거버넌스:</strong> 윤리적, 합법적 사용 및 거래 규정 필요</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right: Solutions -->
+                    <div class="bg-green-50 rounded-xl p-4 border border-green-200">
+                        <h4 class="font-bold text-green-700 text-sm mb-2 flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>카카오의 접근법
+                        </h4>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-green-400 mt-1" style="font-size: 6px;"></i>
+                                <p class="text-gray-700"><strong>데이터 카탈로그:</strong> 중앙집중식 메타데이터, 계보 추적 시스템</p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-green-400 mt-1" style="font-size: 6px;"></i>
+                                <p class="text-gray-700"><strong>TDVL 개념:</strong> 총 잠김 데이터 가치 및 데이터 출처 관리</p>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-green-400 mt-1" style="font-size: 6px;"></i>
+                                <p class="text-gray-700"><strong>강력한 거버넌스:</strong> 내부 규정과 외부 규제 대응 체계</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Process flow -->
+            <div class="bg-white rounded-2xl p-4 shadow-lg">
+                <h3 class="text-lg font-bold text-gray-800 mb-3 text-center">
+                    데이터 자산화 <span class="kakao-yellow">핵심 프로세스</span>
+                </h3>
+                
+                <div class="flex justify-between items-center space-x-2">
+                    <!-- Step 1 -->
+                    <div class="process-card flex-1 bg-gray-50 rounded-xl p-3 process-arrow">
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <span class="text-white font-bold text-xs">1</span>
+                            </div>
+                            <h4 class="font-bold text-gray-700 text-xs mb-1">수집·식별</h4>
+                            <p class="text-xs text-gray-600">관련 소스 식별</p>
+                            <p class="text-xs text-gray-600">완전성 격차 평가</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-card flex-1 bg-blue-50 rounded-xl p-3 process-arrow">
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <span class="text-white font-bold text-xs">2</span>
+                            </div>
+                            <h4 class="font-bold text-gray-700 text-xs mb-1">정제·변환</h4>
+                            <p class="text-xs text-gray-600">오류/중복 처리</p>
+                            <p class="text-xs text-gray-600">형식 표준화</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-card flex-1 bg-green-50 rounded-xl p-3 process-arrow">
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <span class="text-white font-bold text-xs">3</span>
+                            </div>
+                            <h4 class="font-bold text-gray-700 text-xs mb-1">구조화</h4>
+                            <p class="text-xs text-gray-600">임베딩·파싱</p>
+                            <p class="text-xs text-gray-600">특징 공학</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-card flex-1 bg-purple-50 rounded-xl p-3 process-arrow">
+                        <div class="text-center">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <span class="text-white font-bold text-xs">4</span>
+                            </div>
+                            <h4 class="font-bold text-gray-700 text-xs mb-1">거버넌스</h4>
+                            <p class="text-xs text-gray-600">접근 통제</p>
+                            <p class="text-xs text-gray-600">보안·개인정보 보호</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="process-card flex-1 bg-yellow-50 rounded-xl p-3">
+                        <div class="text-center">
+                            <div class="w-8 h-8 kakao-yellow-bg rounded-full flex items-center justify-center mx-auto mb-1">
+                                <span class="text-gray-800 font-bold text-xs">5</span>
+                            </div>
+                            <h4 class="font-bold text-gray-700 text-xs mb-1">가치 실현</h4>
+                            <p class="text-xs text-gray-600">데이터 배당금</p>
+                            <p class="text-xs text-gray-600">비즈니스 가치 창출</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Key insight -->
+            <div class="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-2xl p-3 text-center">
+                <p class="text-gray-800 font-bold text-sm">
+                    <i class="fas fa-lightbulb mr-2"></i>
+                    "부실한 데이터는 AI 실패로 이어진다. 강력한 데이터 자산화 전략은 성공적인 AI Native 전환의 전제 조건이다."
+                </p>
+                <p class="text-gray-700 text-xs mt-1">- AI Native 전환의 성공은 데이터 자산화의 깊이와 품질에 비례</p>
+            </div>
+        </div>
+        
+        <!-- Bottom decoration -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 kakao-yellow-bg opacity-80"></div>
+    </div>
+</body>
+</html>
+

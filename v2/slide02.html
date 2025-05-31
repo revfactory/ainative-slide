@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프레젠테이션 아젠다</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .slide-container {
+            width: 1920px;
+            height: 1080px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 50%, #FFA500 100%);
+        }
+        .agenda-item {
+            transition: all 0.4s ease;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        .agenda-item:hover {
+            transform: perspective(1000px) rotateY(-5deg) translateZ(50px);
+            box-shadow: 0 20px 40px rgba(254, 229, 0, 0.2);
+        }
+        .progress-line {
+            position: relative;
+        }
+        .progress-line::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #FEE500, #FFD700);
+            transform: translateY(-50%);
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 18px;
+            color: #666;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-20">
+        <!-- Header Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-black mb-6">
+                <span class="kakao-yellow">아젠다</span>
+            </h1>
+            <p class="text-2xl font-light text-gray-300">데이터 자산화를 통한 AI Native 전환 로드맵</p>
+        </div>
+        
+        <!-- Progress Flow -->
+        <div class="flex justify-center items-center mb-16">
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center progress-line">
+                    <div class="w-4 h-4 gradient-accent rounded-full"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-400">개념</span>
+                </div>
+                <div class="flex items-center progress-line">
+                    <div class="w-4 h-4 gradient-accent rounded-full"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-400">발굴</span>
+                </div>
+                <div class="flex items-center progress-line">
+                    <div class="w-4 h-4 gradient-accent rounded-full"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-400">통합</span>
+                </div>
+                <div class="flex items-center progress-line">
+                    <div class="w-4 h-4 gradient-accent rounded-full"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-400">플랫폼</span>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-4 h-4 gradient-accent rounded-full"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-400">성과</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Agenda Grid -->
+        <div class="grid grid-cols-2 gap-12">
+            <!-- Part 1: Foundation -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-gray-100 mb-8">Part 1: 기반 구축</h2>
+                
+                <!-- Agenda Item 1 -->
+                <div class="agenda-item bg-gray-900 rounded-3xl p-8 border border-gray-700">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-lightbulb text-2xl text-black"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-3">AI Native 개념과 데이터 자산화</h3>
+                            <p class="text-gray-400 text-lg leading-relaxed">AI Native 전환의 정의와 데이터 자산화의 핵심 개념, 상호 공생관계</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="px-3 py-1 bg-yellow-900 text-yellow-300 text-sm rounded-full">개념</span>
+                                <span class="px-3 py-1 bg-blue-900 text-blue-300 text-sm rounded-full">전략</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Agenda Item 2 -->
+                <div class="agenda-item bg-gray-900 rounded-3xl p-8 border border-gray-700">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-search text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-3">잠자는 기업 데이터 깨우기</h3>
+                            <p class="text-gray-400 text-lg leading-relaxed">내부 데이터 가치 발굴과 AI를 위한 지식 구조화 전략</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="px-3 py-1 bg-blue-900 text-blue-300 text-sm rounded-full">AI 버디</span>
+                                <span class="px-3 py-1 bg-green-900 text-green-300 text-sm rounded-full">데이터 카탈로그</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Part 2: Implementation -->
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-gray-100 mb-8">Part 2: 실행과 성과</h2>
+                
+                <!-- Agenda Item 3 -->
+                <div class="agenda-item bg-gray-900 rounded-3xl p-8 border border-gray-700">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-link text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-3">내외부 데이터 통합 전략</h3>
+                            <p class="text-gray-400 text-lg leading-relaxed">외부 전문 데이터와의 시너지로 가치 극대화</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="px-3 py-1 bg-green-900 text-green-300 text-sm rounded-full">RAG</span>
+                                <span class="px-3 py-1 bg-red-900 text-red-300 text-sm rounded-full">특허청 MOU</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Agenda Item 4 -->
+                <div class="agenda-item bg-gray-900 rounded-3xl p-8 border border-gray-700">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-rocket text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-white mb-3">AI 기반 통합 지식 플랫폼</h3>
+                            <p class="text-gray-400 text-lg leading-relaxed">정보 접근성을 넘어 활용성 극대화를 위한 플랫폼</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="px-3 py-1 bg-purple-900 text-purple-300 text-sm rounded-full">KAP</span>
+                                <span class="px-3 py-1 bg-yellow-900 text-yellow-300 text-sm rounded-full">카나나</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Number -->
+        <div class="slide-number">02</div>
+        
+        <!-- Bottom Accent Bar -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
+    </div>
+</body>
+</html>

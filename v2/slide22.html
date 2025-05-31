@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG (Retrieval-Augmented Generation) 기술 도입</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .slide-container {
+            width: 1920px;
+            height: 1080px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 50%, #FFA500 100%);
+        }
+        .rag-card {
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+        }
+        .rag-card:hover {
+            transform: translateY(-5px);
+            border-color: #7c3aed;
+            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.15);
+        }
+        .rag-flow {
+            position: relative;
+        }
+        .rag-flow::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -35px;
+            width: 35px;
+            height: 3px;
+            background: linear-gradient(90deg, #7c3aed, #a855f7);
+            transform: translateY(-50%);
+            animation: ragProcess 3s infinite;
+        }
+        .rag-flow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -45px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #a855f7;
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            transform: translateY(-50%);
+        }
+        @keyframes ragProcess {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 18px;
+            color: #666;
+            font-weight: 600;
+        }
+        .vector-space {
+            background: radial-gradient(circle at center, #1e1b4b 0%, #0f0f23 100%);
+            border: 2px solid #7c3aed;
+            border-radius: 20px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .vector-space::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%237c3aed" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+        .knowledge-chunk {
+            background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 8px 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+        }
+        .retrieval-score {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 8px;
+            padding: 4px 8px;
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+        .rag-architecture {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 2px solid #7c3aed;
+            border-radius: 16px;
+            padding: 16px;
+            position: relative;
+        }
+        .rag-step {
+            background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container p-20">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-black mb-6">
+                <span class="text-purple-400">RAG</span> <span class="kakao-yellow">기술 도입</span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-4">(Retrieval-Augmented Generation)</p>
+            <p class="text-2xl font-light text-gray-300">내부 지식과 외부 정보를 연결하는 지능형 질의응답 시스템</p>
+        </div>
+        
+        <!-- RAG Architecture Flow -->
+        <div class="grid grid-cols-5 gap-6 mb-16">
+            <!-- Step 1: User Query -->
+            <div class="rag-card bg-gray-900 rounded-3xl p-6 rag-flow">
+                <div class="text-center mb-4">
+                    <div class="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-question text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">사용자 질의</h3>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="bg-gray-800 rounded-lg p-3">
+                        <p class="text-gray-300 text-xs">“새로운 금융 규제가 카카오페이에 미치는 영향은?”</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 2: Retrieval -->
+            <div class="rag-card bg-gray-900 rounded-3xl p-6 rag-flow">
+                <div class="text-center mb-4">
+                    <div class="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-search text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">관련 정보 검색</h3>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 내부 정책 문서</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 규제 데이터</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 업계 리포트</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 3: Context Building -->
+            <div class="rag-card bg-gray-900 rounded-3xl p-6 rag-flow">
+                <div class="text-center mb-4">
+                    <div class="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-puzzle-piece text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">컨텍스트 구성</h3>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 유사도 랭킹</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 다중 소스 통합</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 내용 필터링</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 4: AI Generation -->
+            <div class="rag-card bg-gray-900 rounded-3xl p-6 rag-flow">
+                <div class="text-center mb-4">
+                    <div class="w-14 h-14 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">AI 답변 생성</h3>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• LLM 처리</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 컨텍스트 기반</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 정확성 보장</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Step 5: Response -->
+            <div class="rag-card bg-gray-900 rounded-3xl p-6">
+                <div class="text-center mb-4">
+                    <div class="w-14 h-14 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-comments text-xl text-black"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">지능형 응답</h3>
+                </div>
+                
+                <div class="space-y-2">
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 종합 분석</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 출처 명시</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-2">
+                        <p class="text-gray-300 text-xs">• 실행 방안</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RAG Implementation Details -->
+        <div class="grid grid-cols-2 gap-12 mb-16">
+            <!-- Vector Knowledge Base -->
+            <div class="rag-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-project-diagram text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">벡터 지식 베이스</h3>
+                </div>
+                
+                <div class="vector-space mb-6">
+                    <h4 class="text-lg font-semibold text-white mb-4 relative z-10">지식 청크 예시</h4>
+                    <div class="relative z-10">
+                        <div class="knowledge-chunk">
+                            금융위 새로운 규제
+                            <div class="retrieval-score">0.94</div>
+                        </div>
+                        <div class="knowledge-chunk">
+                            카카오페이 사업 영역
+                            <div class="retrieval-score">0.89</div>
+                        </div>
+                        <div class="knowledge-chunk">
+                            금융 규제 변화 이력
+                            <div class="retrieval-score">0.87</div>
+                        </div>
+                        <div class="knowledge-chunk">
+                            전자결제 업계 동향
+                            <div class="retrieval-score">0.82</div>
+                        </div>
+                        <div class="knowledge-chunk">
+                            내부 컴플라이언스 정책
+                            <div class="retrieval-score">0.78</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="rag-architecture">
+                        <div class="rag-step">단계 1</div>
+                        <h4 class="text-lg font-semibold text-white mb-2">문서 벡터화</h4>
+                        <p class="text-gray-300 text-sm">내부 문서와 외부 데이터를 고차원 벡터로 변환</p>
+                    </div>
+                    
+                    <div class="rag-architecture">
+                        <div class="rag-step">단계 2</div>
+                        <h4 class="text-lg font-semibold text-white mb-2">의미적 검색</h4>
+                        <p class="text-gray-300 text-sm">질의와 의미적으로 유사한 내용을 빠르게 식별</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Multi-Source Integration -->
+            <div class="rag-card bg-gray-900 rounded-3xl p-10">
+                <div class="text-center mb-8">
+                    <div class="w-20 h-20 bg-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-network-wired text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-4">다중 소스 통합</h3>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-blue-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-building text-blue-400 mr-3"></i>
+                            내부 지식 자산
+                        </h4>
+                        <ul class="text-gray-300 text-sm space-y-2">
+                            <li>• 회사 내부 정책 및 가이드라인</li>
+                            <li>• 프로젝트 문서 및 기술 명세서</li>
+                            <li>• 과거 의사결정 사례 및 결과</li>
+                            <li>• 전문가 지식 및 베스트 프랙티스</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-green-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-globe text-green-400 mr-3"></i>
+                            외부 정보 소스
+                        </h4>
+                        <ul class="text-gray-300 text-sm space-y-2">
+                            <li>• 업계 리포트 및 시장 동향 분석</li>
+                            <li>• 규제 기관 발표 자료 및 가이드</li>
+                            <li>• 업계 뉴스 및 전문가 의견</li>
+                            <li>• 경쟁사 공개 정보 및 전략</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-purple-500">
+                        <h4 class="text-xl font-semibold text-white mb-3">
+                            <i class="fas fa-sync text-purple-400 mr-3"></i>
+                            실시간 데이터
+                        </h4>
+                        <ul class="text-gray-300 text-sm space-y-2">
+                            <li>• 실시간 시장 데이터 및 지표</li>
+                            <li>• 소셜 미디어 동향 및 여론</li>
+                            <li>• 이벤트 기반 알림 및 업데이트</li>
+                            <li>• 사용자 행동 패턴 변화</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- RAG Benefits and Results -->
+        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-3xl p-12 border border-purple-500">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-8">RAG 도입 효과</h2>
+                <div class="grid grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-purple-400 mb-2">95%</div>
+                        <p class="text-gray-300">답변 정확도</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-cyan-400 mb-2">80%</div>
+                        <p class="text-gray-300">정보 검색 시간 단축</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-400 mb-2">10배</div>
+                        <p class="text-gray-300">지식 베이스 활용도</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold kakao-yellow mb-2">24/7</div>
+                        <p class="text-gray-300">실시간 지식 지원</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Number -->
+        <div class="slide-number">22</div>
+        
+        <!-- Bottom Accent Bar -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
+    </div>
+</body>
+</html>

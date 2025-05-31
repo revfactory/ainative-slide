@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성공 측정과 ROI</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            margin: 0 auto;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .kakao-yellow-bg {
+            background-color: #FEE500;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+        }
+        .metric-card {
+            transition: all 0.3s ease;
+        }
+        .metric-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #FEE500 0%, #fbbf24 100%);
+            height: 4px;
+            border-radius: 2px;
+        }
+        .compact-card {
+            padding: 8px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container gradient-bg relative overflow-hidden">
+        <!-- Header -->
+        <div class="relative z-10 pt-3 pb-2 text-center">
+            <h1 class="text-3xl font-black text-gray-800 mb-1">
+                거버넌스, 도전과제 및 <span class="kakao-yellow">성과 측정</span>
+            </h1>
+            <p class="text-sm text-gray-600 font-medium">AI Native 전환의 지속 가능한 성공을 위한 전략적 접근</p>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="relative z-10 px-4">
+            <!-- Data & AI Governance Framework -->
+            <div class="bg-white rounded-lg p-3 shadow-md mb-3">
+                <h3 class="text-sm font-bold text-gray-800 mb-2 text-center">
+                    데이터 및 AI <span class="kakao-yellow">거버넌스</span> 프레임워크
+                </h3>
+                
+                <div class="grid grid-cols-4 gap-3">
+                    <!-- Governance Objectives -->
+                    <div class="bg-blue-50 rounded-lg p-3 border border-blue-200">
+                        <div class="text-center mb-2">
+                            <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <i class="fas fa-target text-white text-xs"></i>
+                            </div>
+                            <h4 class="font-bold text-xs text-gray-800">목표 정의</h4>
+                        </div>
+                        <div class="text-xs space-y-1">
+                            <p class="text-blue-600">• 데이터 상호작용 정책</p>
+                            <p class="text-blue-600">• AI 접근 규정</p>
+                            <p class="text-blue-600 font-semibold">• 품질 보증 및 보안</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Expert Team -->
+                    <div class="bg-green-50 rounded-lg p-3 border border-green-200">
+                        <div class="text-center mb-2">
+                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <i class="fas fa-users text-white text-xs"></i>
+                            </div>
+                            <h4 class="font-bold text-xs text-gray-800">전담 팀</h4>
+                        </div>
+                        <div class="text-xs space-y-1">
+                            <p class="text-green-600">• 데이터 과학자</p>
+                            <p class="text-green-600">• 규정 준수 전문가</p>
+                            <p class="text-green-600 font-semibold">• 법률 전문가</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Security & Privacy -->
+                    <div class="bg-red-50 rounded-lg p-3 border border-red-200">
+                        <div class="text-center mb-2">
+                            <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <i class="fas fa-shield-alt text-white text-xs"></i>
+                            </div>
+                            <h4 class="font-bold text-xs text-gray-800">보안 및 개인정보</h4>
+                        </div>
+                        <div class="text-xs space-y-1">
+                            <p class="text-red-600">• 암호화 및 접근 통제</p>
+                            <p class="text-red-600">• GDPR, CCPA 준수</p>
+                            <p class="text-red-600 font-semibold">• 감사 로그 및 모니터링</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Ethical AI -->
+                    <div class="bg-purple-50 rounded-lg p-3 border border-purple-200">
+                        <div class="text-center mb-2">
+                            <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-1">
+                                <i class="fas fa-balance-scale text-white text-xs"></i>
+                            </div>
+                            <h4 class="font-bold text-xs text-gray-800">윤리적 AI</h4>
+                        </div>
+                        <div class="text-xs space-y-1">
+                            <p class="text-purple-600">• 설명 가능성 (XAI)</p>
+                            <p class="text-purple-600">• 알고리즘 편향 방지</p>
+                            <p class="text-purple-600 font-semibold">• 카나나 세이프가드</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Key Challenges & Solutions -->
+            <div class="bg-white rounded-lg p-3 shadow-md mb-3">
+                <h3 class="text-sm font-bold text-gray-800 mb-2 text-center">
+                    주요 <span class="kakao-yellow">도전과제</span> 및 카카오의 해결방안
+                </h3>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <!-- Challenges -->
+                    <div class="bg-red-50 rounded-lg p-3 border border-red-200">
+                        <h4 class="font-bold text-sm text-red-700 mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>주요 도전과제
+                        </h4>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-red-400 mt-1" style="font-size: 6px;"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">데이터 관련:</p>
+                                    <p class="text-gray-600">비조직적 시스템, 분산/사일로화, 낮은 품질</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-red-400 mt-1" style="font-size: 6px;"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">AI 관련:</p>
+                                    <p class="text-gray-600">신뢰성(환각, 설명가능성), 편향, 개인정보</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-red-400 mt-1" style="font-size: 6px;"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">조직적:</p>
+                                    <p class="text-gray-600">인재 격차, 전략적 불일치, 변화 관리/문화적 저항</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Kakao's Solutions -->
+                    <div class="bg-green-50 rounded-lg p-3 border border-green-200">
+                        <h4 class="font-bold text-sm text-green-700 mb-2 flex items-center">
+                            <i class="fas fa-check-circle mr-2"></i>카카오의 해결방안
+                        </h4>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-green-400 mt-1" style="font-size: 6px;"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">데이터 인프라:</p>
+                                    <p class="text-gray-600">데이터 카탈로그, 데이터 리터러시 교육</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-green-400 mt-1" style="font-size: 6px;"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">AI 신뢰/안전:</p>
+                                    <p class="text-gray-600">카나나 세이프가드, XAI 연구, 방송통신대-상명대 협력</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-2">
+                                <i class="fas fa-circle text-green-400 mt-1" style="font-size: 6px;"></i>
+                                <div>
+                                    <p class="font-semibold text-gray-700">문화 변혁:</p>
+                                    <p class="text-gray-600">AI Native 성숙도 모델, 내부 도구(AI버디, KAP), 교육/세미나/해커톤</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ROI & Performance Measurement -->
+            <div class="grid grid-cols-2 gap-3 mb-3">
+                <!-- ROI Framework -->
+                <div class="bg-white rounded-lg p-3 shadow-md">
+                    <h3 class="text-sm font-bold text-gray-800 mb-2">성과 측정 프레임워크</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="text-center p-2 bg-yellow-50 rounded border border-yellow-200">
+                            <i class="fas fa-chart-bar text-yellow-600 text-sm mb-1"></i>
+                            <h4 class="font-bold text-xs text-gray-800">비즈니스 가치</h4>
+                            <p class="text-xs text-gray-600">지속적 투자와 이해관계자 지지</p>
+                        </div>
+                        <div class="text-center p-2 bg-blue-50 rounded border border-blue-200">
+                            <i class="fas fa-clock text-blue-600 text-sm mb-1"></i>
+                            <h4 class="font-bold text-xs text-gray-800">단계별 접근</h4>
+                            <p class="text-xs text-gray-600">사용자 채택률 및 결과 측정</p>
+                        </div>
+                        <div class="text-center p-2 bg-green-50 rounded border border-green-200">
+                            <i class="fas fa-users text-green-600 text-sm mb-1"></i>
+                            <h4 class="font-bold text-xs text-gray-800">직원 경험</h4>
+                            <p class="text-xs text-gray-600">사용자 만족도 및 생산성 향상</p>
+                        </div>
+                        <div class="text-center p-2 bg-purple-50 rounded border border-purple-200">
+                            <i class="fas fa-shield-alt text-purple-600 text-sm mb-1"></i>
+                            <h4 class="font-bold text-xs text-gray-800">리스크 관리</h4>
+                            <p class="text-xs text-gray-600">사기 탐지 및 보안 강화</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Success Metrics -->
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg p-3 shadow-md text-white">
+                    <h3 class="text-sm font-bold mb-2 text-center">카카오 주요 성과 지표</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="text-center p-2 bg-white bg-opacity-20 rounded">
+                            <div class="text-lg font-black text-yellow-400">60%</div>
+                            <p class="text-xs">개발 효율성 향상</p>
+                        </div>
+                        <div class="text-center p-2 bg-white bg-opacity-20 rounded">
+                            <div class="text-lg font-black text-green-400">99.9%</div>
+                            <p class="text-xs">서비스 안정성</p>
+                        </div>
+                        <div class="text-center p-2 bg-white bg-opacity-20 rounded">
+                            <div class="text-lg font-black text-blue-300">92%</div>
+                            <p class="text-xs">사용자 만족도</p>
+                        </div>
+                        <div class="text-center p-2 bg-white bg-opacity-20 rounded">
+                            <div class="text-lg font-black text-purple-300">PB급</div>
+                            <p class="text-xs">데이터 통합 및 관리</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Strategic Insights -->
+            <div class="bg-gradient-to-r from-gray-700 to-gray-800 rounded-lg p-3 shadow-md text-white">
+                <h3 class="text-sm font-bold mb-2 text-center">전략적 인사이트 및 차세대 과제</h3>
+                <div class="grid grid-cols-4 gap-2">
+                    <div class="text-center">
+                        <i class="fas fa-lightbulb kakao-yellow text-lg mb-1"></i>
+                        <p class="text-xs font-semibold">강력한 거버넌스는 제한이 아닌 성공의 동력</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-cogs kakao-yellow text-lg mb-1"></i>
+                        <p class="text-xs font-semibold">AI Native 전환의 대부분 과제는 데이터 준비와 조직 변화</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-balance-scale kakao-yellow text-lg mb-1"></i>
+                        <p class="text-xs font-semibold">유형/무형 ROI 균형 측정을 통한 종합적 평가</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-rocket kakao-yellow text-lg mb-1"></i>
+                        <p class="text-xs font-semibold">기술 및 사람, 생태계 참여를 통한 다각적 접근</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom decoration -->
+        <div class="absolute bottom-0 left-0 right-0 h-1 kakao-yellow-bg opacity-80"></div>
+    </div>
+
+</body>
+</html>
+
