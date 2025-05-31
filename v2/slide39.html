@@ -14,12 +14,133 @@
             color: #ffffff;
         }
         .slide-container {
-            width: 1920px;
-            height: 1080px;
+            max-width: 1400px;
+            min-height: 100vh;
             margin: 0 auto;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
             position: relative;
             overflow: hidden;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        /* Responsive breakpoints */
+        @media (max-width: 1440px) {
+            .slide-container {
+                max-width: 1200px;
+                padding: 1.5rem 1rem;
+            }
+        }
+        
+        @media (max-width: 1200px) {
+            .slide-container {
+                max-width: 1024px;
+                padding: 1.5rem 0.75rem;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .slide-container {
+                max-width: 768px;
+                padding: 1rem 0.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .slide-container {
+                max-width: 100%;
+                padding: 1rem 0.5rem;
+                min-height: 100vh;
+            }
+        }
+        
+        /* Responsive text scaling */
+        @media (max-width: 1200px) {
+            .slide-container h1 {
+                font-size: 4rem !important;
+            }
+            .slide-container h2 {
+                font-size: 2.5rem !important;
+            }
+            .slide-container h3 {
+                font-size: 1.75rem !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .slide-container h1 {
+                font-size: 3rem !important;
+            }
+            .slide-container h2 {
+                font-size: 2rem !important;
+            }
+            .slide-container h3 {
+                font-size: 1.5rem !important;
+            }
+            .slide-container p {
+                font-size: 1rem !important;
+            }
+        }
+        
+        /* Responsive grid adjustments */
+        @media (max-width: 1024px) {
+            .grid-cols-2 {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+            .grid-cols-3 {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+            .grid-cols-4 {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .grid-cols-3 {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+            .grid-cols-4 {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
+        }
+        
+        /* Responsive spacing adjustments */
+        @media (max-width: 1024px) {
+            .slide-container .space-x-16 > * + * {
+                margin-left: 2rem !important;
+            }
+            .slide-container .space-x-12 > * + * {
+                margin-left: 1.5rem !important;
+            }
+            .slide-container .gap-12 {
+                gap: 1.5rem !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .slide-container .space-x-16 > * + * {
+                margin-left: 1rem !important;
+            }
+            .slide-container .space-x-12 > * + * {
+                margin-left: 1rem !important;
+            }
+            .slide-container .gap-8 {
+                gap: 1rem !important;
+            }
+            .slide-container .gap-12 {
+                gap: 1rem !important;
+            }
+            .slide-container .mb-16 {
+                margin-bottom: 2rem !important;
+            }
+            .slide-container .mb-12 {
+                margin-bottom: 1.5rem !important;
+            }
+            .slide-container .mb-8 {
+                margin-bottom: 1rem !important;
+            }
         }
         .kakao-yellow {
             color: #FEE500;
@@ -68,11 +189,26 @@
         }
         .slide-number {
             position: absolute;
-            bottom: 40px;
-            right: 40px;
-            font-size: 18px;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: 1rem;
             color: #666;
             font-weight: 600;
+        }
+        
+        @media (min-width: 768px) {
+            .slide-number {
+                bottom: 2.5rem;
+                right: 2.5rem;
+                font-size: 1.125rem;
+            }
+        }
+        
+        /* Maintain aspect ratio for floating elements on smaller screens */
+        @media (max-width: 768px) {
+            .floating-orb, .floating-orb-2 {
+                transform: scale(0.6) !important;
+            }
         }
         .roadmap-timeline {
             position: relative;
