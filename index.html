@@ -234,10 +234,10 @@
             
             <!-- Quick Start Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-                <a href="v2/slide01.html" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                <button onclick="startPresentation()" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer">
                     <i class="fas fa-play mr-3"></i>
                     프레젠테이션 시작
-                </a>
+                </button>
                 <a href="#overview" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-yellow-500 text-yellow-400 hover:bg-yellow-500 hover:text-black font-bold rounded-xl transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-info-circle mr-3"></i>
                     자세히 보기
@@ -772,12 +772,12 @@
                         빠른 시작
                     </h3>
                     <div class="space-y-4">
-                        <a href="v2/slide01.html" class="block p-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors duration-300">
+                        <button onclick="startPresentation()" class="w-full text-left block p-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors duration-300 cursor-pointer">
                             <div class="flex items-center">
                                 <i class="fas fa-play text-yellow-400 mr-3"></i>
                                 <span class="text-white font-medium">첫 번째 슬라이드부터 시작</span>
                             </div>
-                        </a>
+                        </button>
                         <a href="v2/slide06.html" class="block p-4 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors duration-300">
                             <div class="flex items-center">
                                 <i class="fas fa-database text-green-400 mr-3"></i>
@@ -904,6 +904,18 @@
     </button>
 
     <script>
+        // Start presentation function
+        function startPresentation() {
+            // Check if already in fullscreen mode
+            if (document.fullscreenElement) {
+                // If in fullscreen, navigate while maintaining fullscreen
+                window.location.href = 'v2/slide01.html';
+            } else {
+                // If not in fullscreen, just navigate normally
+                window.location.href = 'v2/slide01.html';
+            }
+        }
+        
         // Fullscreen functionality
         function toggleFullscreen() {
             if (!document.fullscreenElement) {
