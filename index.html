@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Native 혁신 - 카카오의 데이터 자산화 여정</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+        .kakao-yellow {
+            color: #FEE500;
+        }
+        .gradient-accent {
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 50%, #FFA500 100%);
+        }
+        .slide-card {
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+        }
+        .slide-card:hover {
+            transform: translateY(-8px);
+            border-color: #FEE500;
+            box-shadow: 0 20px 40px rgba(254, 229, 0, 0.15);
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+        }
+        .section-header {
+            background: linear-gradient(135deg, #581c87 0%, #6b21a8 100%);
+            border: 2px solid #8b5cf6;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            position: relative;
+        }
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FEE500, #FFD700, #FFA500, #FF8C00);
+            border-radius: 16px;
+            z-index: -1;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .slide-number {
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 100%);
+            color: #000;
+            font-weight: 900;
+            font-size: 1.25rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            animation: numberPulse 2s ease-in-out infinite;
+        }
+        @keyframes numberPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .slide-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .slide-description {
+            font-size: 0.9rem;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 30%, #FFA500 60%, #FF8C00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 24px;
+            animation: heroShine 4s ease-in-out infinite;
+        }
+        @keyframes heroShine {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 20px rgba(254, 229, 0, 0.3)); }
+            50% { filter: brightness(1.3) drop-shadow(0 0 40px rgba(254, 229, 0, 0.6)); }
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #d1d5db;
+            margin-bottom: 16px;
+        }
+        .hero-description {
+            font-size: 1.1rem;
+            color: #9ca3af;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .floating-icon {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+        }
+        .icon-1 {
+            top: 20%;
+            left: 10%;
+            font-size: 3rem;
+            color: #3b82f6;
+            animation-delay: 0s;
+        }
+        .icon-2 {
+            top: 30%;
+            right: 15%;
+            font-size: 2.5rem;
+            color: #10b981;
+            animation-delay: 2s;
+        }
+        .icon-3 {
+            bottom: 25%;
+            left: 15%;
+            font-size: 2.8rem;
+            color: #8b5cf6;
+            animation-delay: 4s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(5deg); }
+            66% { transform: translateY(-10px) rotate(-3deg); }
+        }
+        .navigation-stats {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 2px solid #0ea5e9;
+            border-radius: 20px;
+            padding: 32px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .stat-item {
+            display: inline-block;
+            margin: 0 32px;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section-progress {
+            height: 4px;
+            background: #374151;
+            border-radius: 2px;
+            margin: 16px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #FEE500, #FFD700);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        .fullscreen-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FEE500 0%, #FFD700 100%);
+            border: none;
+            border-radius: 50%;
+            color: #000;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(254, 229, 0, 0.3);
+        }
+        .fullscreen-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(254, 229, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="floating-icon icon-1">
+            <i class="fas fa-brain"></i>
+        </div>
+        <div class="floating-icon icon-2">
+            <i class="fas fa-database"></i>
+        </div>
+        <div class="floating-icon icon-3">
+            <i class="fas fa-rocket"></i>
+        </div>
+        
+        <div class="container mx-auto px-8">
+            <h1 class="hero-title">AI Native 혁신</h1>
+            <p class="hero-subtitle">카카오의 데이터 자산화 여정</p>
+            <p class="hero-description">
+                AI 중심의 조직 변화와 데이터 자산화를 통한 지속 가능한 혁신 전략을 소개합니다.<br/>
+                총 40개의 상세한 슬라이드로 구성된 포괄적인 AI Native 전환 가이드입니다.
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation Stats -->
+    <div class="container mx-auto px-8">
+        <div class="navigation-stats">
+            <div class="stat-item">
+                <div class="stat-number">40</div>
+                <p class="text-gray-300">총 슬라이드</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <p class="text-gray-300">주요 섹션</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2024</div>
+                <p class="text-gray-300">최신 버전</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="container mx-auto px-8 pb-20">
+        <!-- Section 1: Introduction -->
+        <div class="section-header">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">
+                        <i class="fas fa-play-circle kakao-yellow mr-4"></i>
+                        소개 및 개요
+                    </h2>
+                    <p class="text-purple-200">AI Native 전환의 배경과 전체 여정 개요</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold kakao-yellow">슬라이드 1-5</div>
+                    <div class="section-progress">
+                        <div class="progress-bar" style="width: 12.5%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+            <a href="v2/slide01.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">01</div>
+                <div class="slide-title">AI Native 혁신의 시작</div>
+                <div class="slide-description">카카오의 AI 중심 조직 전환 선언과 비전 제시</div>
+            </a>
+            
+            <a href="v2/slide02.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">02</div>
+                <div class="slide-title">발표 안내</div>
+                <div class="slide-description">전체 프레젠테이션 구성과 주요 내용 소개</div>
+            </a>
+            
+            <a href="v2/slide03.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">03</div>
+                <div class="slide-title">AI Native란?</div>
+                <div class="slide-description">AI Native 개념 정의와 기존 AI 활용과의 차이점</div>
+            </a>
+            
+            <a href="v2/slide04.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">04</div>
+                <div class="slide-title">현재 상황 분석</div>
+                <div class="slide-description">카카오의 현재 AI 활용 수준과 개선 필요 영역</div>
+            </a>
+            
+            <a href="v2/slide05.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">05</div>
+                <div class="slide-title">전환 전략 개요</div>
+                <div class="slide-description">AI Native 전환을 위한 종합적 전략과 로드맵</div>
+            </a>
+        </div>
+
+        <!-- Section 2: Internal Data Activation -->
+        <div class="section-header">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">
+                        <i class="fas fa-database kakao-yellow mr-4"></i>
+                        내부 데이터 활성화
+                    </h2>
+                    <p class="text-purple-200">조직 내부 데이터 자산화와 AI 도구 개발</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold kakao-yellow">슬라이드 6-15</div>
+                    <div class="section-progress">
+                        <div class="progress-bar" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+            <a href="v2/slide06.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">06</div>
+                <div class="slide-title">데이터 자산화 전략</div>
+                <div class="slide-description">조직 내 데이터를 전략적 자산으로 전환하는 방법론</div>
+            </a>
+            
+            <a href="v2/slide07.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">07</div>
+                <div class="slide-title">데이터 카탈로그 구축</div>
+                <div class="slide-description">통합 데이터 카탈로그를 통한 데이터 거버넌스</div>
+            </a>
+            
+            <a href="v2/slide08.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">08</div>
+                <div class="slide-title">AI 도구 개발 전략</div>
+                <div class="slide-description">업무 효율성 극대화를 위한 맞춤형 AI 도구</div>
+            </a>
+            
+            <a href="v2/slide09.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">09</div>
+                <div class="slide-title">자동화 시스템 구현</div>
+                <div class="slide-description">반복 업무 자동화와 프로세스 최적화</div>
+            </a>
+            
+            <a href="v2/slide10.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">10</div>
+                <div class="slide-title">실시간 데이터 처리</div>
+                <div class="slide-description">스트리밍 데이터 처리와 실시간 인사이트 생성</div>
+            </a>
+            
+            <a href="v2/slide11.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">11</div>
+                <div class="slide-title">데이터 품질 관리</div>
+                <div class="slide-description">AI 성능 향상을 위한 데이터 품질 보장 체계</div>
+            </a>
+            
+            <a href="v2/slide12.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">12</div>
+                <div class="slide-title">조직 역량 강화</div>
+                <div class="slide-description">데이터 리터러시와 AI 역량 개발 프로그램</div>
+            </a>
+            
+            <a href="v2/slide13.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">13</div>
+                <div class="slide-title">성과 측정 체계</div>
+                <div class="slide-description">데이터 활용 성과를 정량적으로 측정하는 KPI</div>
+            </a>
+            
+            <a href="v2/slide14.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">14</div>
+                <div class="slide-title">보안 및 규정 준수</div>
+                <div class="slide-description">데이터 보안과 개인정보보호 규정 준수 방안</div>
+            </a>
+            
+            <a href="v2/slide15.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">15</div>
+                <div class="slide-title">내부 데이터 활성화 결과</div>
+                <div class="slide-description">내부 데이터 활성화를 통한 구체적 성과와 사례</div>
+            </a>
+        </div>
+
+        <!-- Section 3: External Data Integration -->
+        <div class="section-header">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">
+                        <i class="fas fa-globe kakao-yellow mr-4"></i>
+                        외부 데이터 통합
+                    </h2>
+                    <p class="text-purple-200">외부 데이터 소스 연동과 생태계 확장</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold kakao-yellow">슬라이드 16-25</div>
+                    <div class="section-progress">
+                        <div class="progress-bar" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+            <a href="v2/slide16.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">16</div>
+                <div class="slide-title">외부 데이터 전략</div>
+                <div class="slide-description">외부 데이터 소스 발굴과 통합 전략</div>
+            </a>
+            
+            <a href="v2/slide17.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">17</div>
+                <div class="slide-title">API 생태계 구축</div>
+                <div class="slide-description">개방형 API를 통한 데이터 연동 플랫폼</div>
+            </a>
+            
+            <a href="v2/slide18.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">18</div>
+                <div class="slide-title">파트너십 확장</div>
+                <div class="slide-description">전략적 파트너십을 통한 데이터 가치 극대화</div>
+            </a>
+            
+            <a href="v2/slide19.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">19</div>
+                <div class="slide-title">실시간 연동 시스템</div>
+                <div class="slide-description">외부 데이터의 실시간 수집과 처리 체계</div>
+            </a>
+            
+            <a href="v2/slide20.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">20</div>
+                <div class="slide-title">데이터 표준화</div>
+                <div class="slide-description">이기종 데이터 통합을 위한 표준화 방안</div>
+            </a>
+            
+            <a href="v2/slide21.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">21</div>
+                <div class="slide-title">품질 검증 체계</div>
+                <div class="slide-description">외부 데이터 신뢰성 확보를 위한 검증 프로세스</div>
+            </a>
+            
+            <a href="v2/slide22.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">22</div>
+                <div class="slide-title">비용 최적화</div>
+                <div class="slide-description">외부 데이터 활용 비용 최적화 전략</div>
+            </a>
+            
+            <a href="v2/slide23.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">23</div>
+                <div class="slide-title">규정 준수 관리</div>
+                <div class="slide-description">외부 데이터 활용 시 법적 규정 준수 방안</div>
+            </a>
+            
+            <a href="v2/slide24.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">24</div>
+                <div class="slide-title">성과 분석</div>
+                <div class="slide-description">외부 데이터 통합 효과 측정과 개선 방안</div>
+            </a>
+            
+            <a href="v2/slide25.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">25</div>
+                <div class="slide-title">통합 플랫폼 완성</div>
+                <div class="slide-description">내외부 데이터 통합 플랫폼의 최종 구현</div>
+            </a>
+        </div>
+
+        <!-- Section 4: AI Knowledge Platform -->
+        <div class="section-header">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">
+                        <i class="fas fa-brain kakao-yellow mr-4"></i>
+                        AI 지식 플랫폼
+                    </h2>
+                    <p class="text-purple-200">지능형 지식 관리와 활용도 극대화</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold kakao-yellow">슬라이드 26-30</div>
+                    <div class="section-progress">
+                        <div class="progress-bar" style="width: 12.5%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+            <a href="v2/slide26.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">26</div>
+                <div class="slide-title">지식 플랫폼 구축</div>
+                <div class="slide-description">AI 기반 통합 지식 관리 플랫폼 설계</div>
+            </a>
+            
+            <a href="v2/slide27.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">27</div>
+                <div class="slide-title">지능형 검색 시스템</div>
+                <div class="slide-description">자연어 처리 기반 고도화된 검색 기능</div>
+            </a>
+            
+            <a href="v2/slide28.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">28</div>
+                <div class="slide-title">개인화 추천 엔진</div>
+                <div class="slide-description">사용자 맞춤형 지식 추천과 학습 지원</div>
+            </a>
+            
+            <a href="v2/slide29.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">29</div>
+                <div class="slide-title">협업 강화 도구</div>
+                <div class="slide-description">AI 지원 협업과 지식 공유 활성화</div>
+            </a>
+            
+            <a href="v2/slide30.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">30</div>
+                <div class="slide-title">활용도 극대화</div>
+                <div class="slide-description">지식 플랫폼 활용 성과와 지속적 개선</div>
+            </a>
+        </div>
+
+        <!-- Section 5: Governance & Performance -->
+        <div class="section-header">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-2">
+                        <i class="fas fa-chart-line kakao-yellow mr-4"></i>
+                        거버넌스 & 성과
+                    </h2>
+                    <p class="text-purple-200">거버넌스 체계, 성과 측정, 미래 비전</p>
+                </div>
+                <div class="text-right">
+                    <div class="text-2xl font-bold kakao-yellow">슬라이드 31-40</div>
+                    <div class="section-progress">
+                        <div class="progress-bar" style="width: 25%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
+            <a href="v2/slide31.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">31</div>
+                <div class="slide-title">주요 도전과제</div>
+                <div class="slide-description">AI Native 전환 과정의 핵심 도전과제 분석</div>
+            </a>
+            
+            <a href="v2/slide32.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">32</div>
+                <div class="slide-title">해결책과 대응 전략</div>
+                <div class="slide-description">도전과제별 맞춤형 해결책과 실행 방안</div>
+            </a>
+            
+            <a href="v2/slide33.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">33</div>
+                <div class="slide-title">거버넌스 프레임워크</div>
+                <div class="slide-description">AI 시스템의 종합적 거버넌스 체계</div>
+            </a>
+            
+            <a href="v2/slide34.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">34</div>
+                <div class="slide-title">구현 모범사례</div>
+                <div class="slide-description">성공적 구현을 위한 베스트 프랙티스</div>
+            </a>
+            
+            <a href="v2/slide35.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">35</div>
+                <div class="slide-title">위험 완화 체계</div>
+                <div class="slide-description">지속적 개선과 위험 관리 시스템</div>
+            </a>
+            
+            <a href="v2/slide36.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">36</div>
+                <div class="slide-title">성과 측정 프레임워크</div>
+                <div class="slide-description">AI Native 전환 성과의 정량적 측정</div>
+            </a>
+            
+            <a href="v2/slide37.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">37</div>
+                <div class="slide-title">ROI 분석</div>
+                <div class="slide-description">투자 대비 수익률과 비용-효익 분석</div>
+            </a>
+            
+            <a href="v2/slide38.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">38</div>
+                <div class="slide-title">비즈니스 임팩트</div>
+                <div class="slide-description">실질적 비즈니스 성과와 가치 실현</div>
+            </a>
+            
+            <a href="v2/slide39.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">39</div>
+                <div class="slide-title">미래 비전</div>
+                <div class="slide-description">전략적 로드맵과 미래 혁신 방향</div>
+            </a>
+            
+            <a href="v2/slide40.html" target="_blank" class="slide-card rounded-2xl p-6">
+                <div class="slide-number">40</div>
+                <div class="slide-title">혁신의 새로운 시대</div>
+                <div class="slide-description">AI Native 혁신을 통한 지속 가능한 미래</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Fullscreen Mode Button -->
+    <button class="fullscreen-btn" onclick="toggleFullscreen()" title="전체화면 모드">
+        <i class="fas fa-expand"></i>
+    </button>
+
+    <script>
+        // Fullscreen functionality
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Update fullscreen button icon
+        document.addEventListener('fullscreenchange', function() {
+            const btn = document.querySelector('.fullscreen-btn i');
+            if (document.fullscreenElement) {
+                btn.className = 'fas fa-compress';
+            } else {
+                btn.className = 'fas fa-expand';
+            }
+        });
+
+        // Smooth scroll for section headers
+        document.querySelectorAll('.section-header').forEach(header => {
+            header.addEventListener('click', function() {
+                this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Track slide views (optional analytics)
+        document.querySelectorAll('.slide-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const slideNumber = this.querySelector('.slide-number').textContent;
+                console.log(`Slide ${slideNumber} clicked`);
+                // You can add analytics tracking here
+            });
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            }
+        });
+
+        // Progress bar animation on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section-header');
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < windowHeight * 0.8) {
+                    const progressBar = section.querySelector('.progress-bar');
+                    if (progressBar) {
+                        progressBar.style.opacity = '1';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
