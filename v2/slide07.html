@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,28 +21,6 @@
         .connection-line {
             position: relative;
         }
-        .connection-line::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -60px;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #FEE500, #FFD700);
-            transform: translateY(-50%);
-        }
-        .connection-line::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -75px;
-            width: 0;
-            height: 0;
-            border-left: 15px solid #FEE500;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            transform: translateY(-50%);
-        }
     </style>
 </head>
 <body>
@@ -54,7 +32,7 @@
         <button class="nav-btn" onclick="previousSlide()" title="이전 슬라이드">
             <i class="fas fa-chevron-left"></i>
         </button>
-        <div class="slide-counter">7 / 40</div>
+        <div class="slide-counter">7 / 35</div>
         <button class="nav-btn" onclick="nextSlide()" title="다음 슬라이드">
             <i class="fas fa-chevron-right"></i>
         </button>
@@ -205,7 +183,7 @@
             <div class="text-center">
                 <h2 class="text-3xl font-bold text-white mb-6">핵심 인사이트</h2>
                 <p class="text-2xl font-light text-gray-200 leading-relaxed">
-                    데이터 자산화는 <span class="kakao-yellow font-semibold">AI Native 전환의 결정적인 조력자</span>이자 가속기 역할을 하며, 
+                    데이터 자산화는 <span class="kakao-yellow font-semibold">AI Native 전환의 결정적인 조력자</span>이자 가속기 역할을 하며, <br/>
                     자산화의 질은 <span class="kakao-yellow font-semibold">AI Native 이니셔티브의 정교함과 성공</span>에 직접적인 영향을 미칩니다
                 </p>
             </div>

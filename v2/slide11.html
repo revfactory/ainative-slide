@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카카오의 내부 데이터 현황</title>
+    <title>내부 데이터 현황</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         <button class="nav-btn" onclick="previousSlide()" title="이전 슬라이드">
             <i class="fas fa-chevron-left"></i>
         </button>
-        <div class="slide-counter">11 / 40</div>
+        <div class="slide-counter">11 / 35</div>
         <button class="nav-btn" onclick="nextSlide()" title="다음 슬라이드">
             <i class="fas fa-chevron-right"></i>
         </button>
@@ -27,7 +27,6 @@
     <div class="slide-container">
         <!-- Header -->
         <div class="text-center mb-16">
-            <div class="kakao-brand mb-6">KAKAO</div>
             <h1 class="text-6xl font-black mb-6">
                 내부 데이터 <span class="kakao-yellow">현황 분석</span>
             </h1>
@@ -42,7 +41,6 @@
                     <i class="fas fa-database text-3xl text-white"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">전체 데이터 볼륨</h3>
-                <div class="data-volume mb-4">15+ PB</div>
                 <p class="text-gray-300">다양한 서비스에서<br>생성되는 데이터</p>
             </div>
             
@@ -52,18 +50,15 @@
                     <i class="fas fa-chart-line text-3xl text-white"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">활용 중인 데이터</h3>
-                <div class="data-volume mb-4">~30%</div>
                 <p class="text-gray-300">실제 비즈니스<br>인사이트 창출</p>
             </div>
             
             <!-- Dormant Data -->
             <div class="data-status-card bg-gray-900 rounded-3xl p-8 text-center relative">
-                <div class="challenge-indicator">문제</div>
                 <div class="w-20 h-20 bg-red-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-bed text-3xl text-white"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">휴면 데이터</h3>
-                <div class="data-volume mb-4 text-red-400">~70%</div>
                 <p class="text-gray-300">사장되거나<br>미활용 데이터</p>
             </div>
         </div>
@@ -85,7 +80,7 @@
                             <i class="fas fa-mobile-alt text-yellow-400 mr-3"></i>
                             모바일 서비스
                         </h4>
-                        <p class="text-gray-300">카카오톡, 다음, 카카오내비 등 주요 서비스의 사용자 행동 데이터</p>
+                        <p class="text-gray-300">메신저, 메일, 포털, 네비게이션 등 주요 서비스의 사용자 행동 데이터</p>
                     </div>
                     
                     <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-blue-500">
@@ -176,7 +171,7 @@
             <div class="text-center">
                 <h2 class="text-3xl font-bold text-white mb-6">전략적 임팩트</h2>
                 <p class="text-2xl font-light text-gray-200 leading-relaxed">
-                    카카오의 방대한 데이터 자산 중 <span class="kakao-yellow font-semibold">70% 이상이 활용되지 못하고 있어</span> 
+                    기업의 방대한 데이터 자산 중 <span class="kakao-yellow font-semibold">대부분이 활용되지 못하고 있어</span><br/>
                     AI Native 전환에 필요한 <span class="kakao-yellow font-semibold">데이터 자산화와 인사이트 창출</span>에 주요 제약으로 작용
                 </p>
             </div>

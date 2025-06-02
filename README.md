@@ -1,11 +1,11 @@
-# AI Native 혁신: 카카오의 데이터 자산화 여정
+# AI Native 전환의 핵심, 데이터 자산화 전략
 
 ![AI Native Presentation](https://img.shields.io/badge/AI%20Native-Presentation-FEE500?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjMDAwIi8+Cjwvc3ZnPgo=)
 ![Version](https://img.shields.io/badge/Version-2.0-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 ![Responsive](https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge)
 
-카카오의 AI Native 전환 경험을 통해 배우는 데이터 중심 조직 혁신 전략에 대한 포괄적인 프레젠테이션입니다.
+데이터 중심의 AI Native 전환 전략에 대한 포괄적인 프레젠테이션입니다.
 
 ## 📋 목차
 
@@ -21,7 +21,7 @@
 
 ## 🎯 프로젝트 개요
 
-이 프로젝트는 카카오의 AI Native 전환 여정과 데이터 자산화 전략을 상세히 다룬 40페이지의 인터랙티브 웹 프레젠테이션입니다. 
+이 프로젝트는 AI Native 전환 여정과 데이터 자산화 전략을 상세히 다룬 35페이지의 인터랙티브 웹 프레젠테이션입니다. 
 
 ### 핵심 주제
 - **AI Native 조직 전환 전략**
@@ -59,7 +59,7 @@
 
 ## 📊 프레젠테이션 구조
 
-### 📖 5개 주요 섹션 (40 슬라이드)
+### 📖 5개 주요 섹션 (35 슬라이드)
 
 #### 1️⃣ 소개 및 개요 (슬라이드 1-5)
 - AI Native 전환의 배경과 비전
@@ -90,12 +90,10 @@
 - 협업 강화 도구
 - 활용도 극대화 전략
 
-#### 5️⃣ 거버넌스 & 성과 (슬라이드 31-40)
+#### 5️⃣ 거버넌스 & 성과 (슬라이드 31-35)
 - 주요 도전과제 및 해결책
 - AI 시스템 거버넌스 프레임워크
 - 구현 모범사례
-- 위험 완화 및 지속적 개선
-- 성과 측정 및 ROI 분석
 - 미래 비전 및 전략적 로드맵
 
 ## 🛠 기술 스택

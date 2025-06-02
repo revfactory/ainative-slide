@@ -8,6 +8,83 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/slides.css">
+    <style>
+        /* Slide-specific styles for slide 20 */
+        .results-card {
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+        }
+        .results-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+        }
+        .success-metric {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .adoption-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-bar {
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+        }
+        .timeline-point {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-point::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border: 3px solid #0a0a0a;
+            border-radius: 50%;
+        }
+        .lesson-learned {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border: 2px solid #fbbf24;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+        .lesson-learned::before {
+            content: '💡';
+            font-size: 2rem;
+            position: absolute;
+            top: -1rem;
+            left: 2rem;
+            background: #1e293b;
+            padding: 0.5rem;
+            border-radius: 50%;
+        }
+        .lesson-card {
+            background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+            border: 1px solid #6b7280;
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .lesson-card:hover {
+            transform: translateY(-3px);
+            border-color: #fbbf24;
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.15);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Controls -->
@@ -18,7 +95,7 @@
         <button class="nav-btn" onclick="previousSlide()" title="이전 슬라이드">
             <i class="fas fa-chevron-left"></i>
         </button>
-        <div class="slide-counter">20 / 40</div>
+        <div class="slide-counter">20 / 35</div>
         <button class="nav-btn" onclick="nextSlide()" title="다음 슬라이드">
             <i class="fas fa-chevron-right"></i>
         </button>
@@ -27,7 +104,7 @@
     <div class="slide-container">
         <!-- Header -->
         <div class="text-center mb-16">
-            <div class="kakao-brand mb-6">KAKAO</div>
+            <div class="kakao-brand mb-6">KAKAO 사례</div>
             <h1 class="text-6xl font-black mb-6">
                 내부 도구 도입 <span class="kakao-yellow">성과와 배운 교훈</span>
             </h1>
@@ -42,20 +119,20 @@
                     <i class="fas fa-users text-2xl text-white"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">사용자 도입율</h3>
-                <div class="success-metric mb-2">85%</div>
+                <div class="success-metric mb-2">63%</div>
                 <p class="text-gray-300 text-sm">전체 직원 중 활용률</p>
                 <div class="mt-4 space-y-2 text-sm">
                     <div class="flex justify-between">
                         <span class="text-gray-400">AI Buddy</span>
-                        <span class="text-green-400">92%</span>
+                        <span class="text-green-400">40%</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-gray-400">Code Buddy</span>
-                        <span class="text-green-400">78%</span>
+                        <span class="text-gray-400">Code Buddy PR 커버리지</span>
+                        <span class="text-green-400">50%</span>
                     </div>
                     <div class="flex justify-between">
-                        <span class="text-gray-400">Matrix AI</span>
-                        <span class="text-green-400">65%</span>
+                        <span class="text-gray-400">AI Search</span>
+                        <span class="text-green-400">100%</span>
                     </div>
                 </div>
             </div>
@@ -65,7 +142,7 @@
                 <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-chart-line text-2xl text-white"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4">생산성 향상</h3>
+                <h3 class="text-2xl font-bold text-white mb-4">생산성 향상 (예시)</h3>
                 <div class="success-metric mb-2">156%</div>
                 <p class="text-gray-300 text-sm">도입 전 대비 종합 향상</p>
                 <div class="mt-4 space-y-2 text-sm">
@@ -89,7 +166,7 @@
                 <div class="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-trophy text-2xl text-black"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-white mb-4">비즈니스 임팩트</h3>
+                <h3 class="text-2xl font-bold text-white mb-4">비즈니스 임팩트 (예시)</h3>
                 <div class="success-metric mb-2">3.2억</div>
                 <p class="text-gray-300 text-sm">연간 비용 절감 효과 (원)</p>
                 <div class="mt-4 space-y-2 text-sm">
@@ -125,27 +202,27 @@
                     
                     <div class="space-y-8">
                         <div class="timeline-point pl-16">
-                            <h4 class="text-lg font-semibold text-white mb-2">월 1주: 파일럿 출시</h4>
-                            <p class="text-gray-300 text-sm">개발팀 대상 제한적 베타 테스트</p>
+                            <h4 class="text-lg font-semibold text-white mb-2">⭐️ 2주: PoC 개발</h4>
+                            <p class="text-gray-300 text-sm">핵심 기능 PoC 개발 진행 및 보고</p>
                         </div>
                         
                         <div class="timeline-point pl-16">
-                            <h4 class="text-lg font-semibold text-white mb-2">월 2-3주: 초기 반응</h4>
-                            <p class="text-gray-300 text-sm">사용자 피드백 수집 및 빠른 개선</p>
+                            <h4 class="text-lg font-semibold text-white mb-2">⭐️ 5주: 시스템 개발</h4>
+                            <p class="text-gray-300 text-sm">전체 시스템 설계 및 개발 진행</p>
                         </div>
                         
                         <div class="timeline-point pl-16">
-                            <h4 class="text-lg font-semibold text-white mb-2">월 2개월: 전체 대상 확대</h4>
-                            <p class="text-gray-300 text-sm">비개발직군 대상 전만 확대</p>
+                            <h4 class="text-lg font-semibold text-white mb-2">⭐️ 3주: 내부 테스트 및 QA</h4>
+                            <p class="text-gray-300 text-sm">내부 테스트 및 품질 평가 등</p>
                         </div>
                         
                         <div class="timeline-point pl-16">
-                            <h4 class="text-lg font-semibold text-white mb-2">월 3-4개월: 안정화</h4>
+                            <h4 class="text-lg font-semibold text-white mb-2">⭐️  1개월: 안정화</h4>
                             <p class="text-gray-300 text-sm">사용자 습관 정착 및 사용률 급상승</p>
                         </div>
                         
                         <div class="timeline-point pl-16">
-                            <h4 class="text-lg font-semibold text-white mb-2">월 6개월+: 성숙단계</h4>
+                            <h4 class="text-lg font-semibold text-white mb-2">⭐️ 3개월: 성숙단계</h4>
                             <p class="text-gray-300 text-sm">업무 프로세스에 완전 통합</p>
                         </div>
                     </div>
@@ -167,8 +244,8 @@
                             <i class="fas fa-user-times text-red-400 mr-3"></i>
                             초기 사용자 저항
                         </h4>
-                        <p class="text-gray-400 text-sm mb-2">기존 업무 방식 대비 24% 도입률</p>
-                        <p class="text-green-300 text-sm">✓ 집중 교육과 성공 사례 공유로 해결</p>
+                        <p class="text-gray-400 text-sm mb-2">기존 업무 방식 대비 낮은 사용률</p>
+                        <p class="text-green-300 text-sm">✓ 시스템을 활용한 성공 사례 공유</p>
                     </div>
                     
                     <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-orange-500">
@@ -176,17 +253,17 @@
                             <i class="fas fa-cogs text-orange-400 mr-3"></i>
                             기술적 안정성
                         </h4>
-                        <p class="text-gray-400 text-sm mb-2">초기 시스템 오류율 12%</p>
+                        <p class="text-gray-400 text-sm mb-2">초기 시스템 버그</p>
                         <p class="text-green-300 text-sm">✓ 빠른 버그픽스와 안정성 개선</p>
                     </div>
                     
                     <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-yellow-500">
                         <h4 class="text-lg font-semibold text-white mb-3">
                             <i class="fas fa-graduation-cap text-yellow-400 mr-3"></i>
-                            학습 곡선
+                            품질 개선
                         </h4>
-                        <p class="text-gray-400 text-sm mb-2">비개발자 적응 시간 예상보다 2배</p>
-                        <p class="text-green-300 text-sm">✓ 단계별 가이드와 멘토링 시스템 도입</p>
+                        <p class="text-gray-400 text-sm mb-2">의도하지 않은 응답 등 품질 저하</p>
+                        <p class="text-green-300 text-sm">✓ 사용자 피드백 기반 품질 개선 작업</p>
                     </div>
                     
                     <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-purple-500">
@@ -195,27 +272,42 @@
                             데이터 거버넌스
                         </h4>
                         <p class="text-gray-400 text-sm mb-2">접근 권한과 보안 정책 충돌</p>
-                        <p class="text-green-300 text-sm">✓ 세밀한 권한 체계와 자동 로그 관리</p>
+                        <p class="text-green-300 text-sm">✓ 세밀한 권한 체계와 관련 부서 협의</p>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- Key Lessons Learned -->
-        <div class="lesson-learned mb-8">
-            <h2 class="text-3xl font-bold text-white mb-8 pl-8">핀심 배운 교훈</h2>
-            <div class="grid grid-cols-3 gap-8 pl-8">
-                <div>
-                    <h4 class="text-xl font-semibold kakao-yellow mb-3">1. 사용자 중심 설계</h4>
-                    <p class="text-gray-300 text-sm">기술적 완벽함보다 <strong>사용자 경험</strong>이 도입 성공의 핵심. 직관적이고 자연스러운 인터페이스가 결정적</p>
+        <div class="lesson-learned">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">배운 교훈</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="lesson-card">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-user-friends text-black text-lg"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold kakao-yellow mb-3">1. 사용자 중심 설계</h4>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">기술적 완벽함보다 <strong class="text-white">사용자 경험</strong>이 도입 성공의 핵심. 직관적이고 자연스러운 인터페이스가 결정적</p>
                 </div>
-                <div>
-                    <h4 class="text-xl font-semibold kakao-yellow mb-3">2. 점진적 도입</h4>
-                    <p class="text-gray-300 text-sm"><strong>비급진적 변화</strong>가 사용자 저항을 최소화. 파일럿 그룹부터 시작해 점진적으로 확대하는 전략 효과적</p>
+                <div class="lesson-card">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-step-forward text-white text-lg"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold kakao-yellow mb-3">2. 점진적 도입</h4>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed"><strong class="text-white">비급진적 변화</strong>가 사용자 저항을 최소화. 파일럿 그룹부터 시작해 점진적으로 확대하는 전략 효과적</p>
                 </div>
-                <div>
-                    <h4 class="text-xl font-semibold kakao-yellow mb-3">3. 지속적 개선</h4>
-                    <p class="text-gray-300 text-sm">도입 후에도 <strong>사용자 피드백</strong>을 지속적으로 수집하고 빠른 개선을 진행하는 것이 사용자 만족도 유지의 핵심</p>
+                <div class="lesson-card">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+                            <i class="fas fa-sync-alt text-white text-lg"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold kakao-yellow mb-3">3. 지속적 개선</h4>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">도입 후에도 <strong class="text-white">사용자 피드백</strong>을 지속적으로 수집하고 빠른 개선을 진행하는 것이 사용자 만족도 유지의 핵심</p>
                 </div>
             </div>
         </div>
