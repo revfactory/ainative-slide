@@ -23,147 +23,147 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Controls -->
-    <div class="nav-container">
-        <button class="nav-btn home-btn" onclick="goHome()" title="홈으로">
-            <i class="fas fa-home"></i>
-        </button>
-        <button class="nav-btn" onclick="previousSlide()" title="이전 슬라이드">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="slide-counter">6 / 35</div>
-        <button class="nav-btn" onclick="nextSlide()" title="다음 슬라이드">
-            <i class="fas fa-chevron-right"></i>
-        </button>
+<!-- Navigation Controls -->
+<div class="nav-container">
+    <button class="nav-btn home-btn" onclick="goHome()" title="홈으로">
+        <i class="fas fa-home"></i>
+    </button>
+    <button class="nav-btn" onclick="previousSlide()" title="이전 슬라이드">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="slide-counter">6 / 35</div>
+    <button class="nav-btn" onclick="nextSlide()" title="다음 슬라이드">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+</div>
+
+<div class="slide-container">
+    <!-- Header -->
+    <div class="text-center mb-12">
+        <h1 class="text-6xl font-black mb-6">
+            <span class="kakao-yellow">데이터 자산화</span>의 정의
+        </h1>
+        <p class="text-2xl font-light text-gray-300">AI Native 전환을 위한 핵심 동력</p>
     </div>
 
-    <div class="slide-container">
-        <!-- Header -->
-        <div class="text-center mb-16">
-            <h1 class="text-6xl font-black mb-6">
-                <span class="kakao-yellow">데이터 자산화</span>의 정의
-            </h1>
-            <p class="text-2xl font-light text-gray-300">AI Native 전환을 위한 핵심 동력</p>
-        </div>
-        
-        <!-- Main Definition -->
-        <div class="definition-highlight rounded-3xl p-16 mb-16">
-            <div class="text-center">
-                <div class="w-32 h-32 gradient-accent rounded-full flex items-center justify-center mx-auto mb-12">
-                    <i class="fas fa-gem text-5xl text-black"></i>
-                </div>
-                <h2 class="text-5xl font-bold mb-12 text-white">핵심 정의</h2>
-                <div class="bg-gray-800 rounded-3xl p-12 border-l-8 border-yellow-500">
-                    <p class="text-4xl font-light leading-relaxed text-gray-100">
-                        데이터를 <span class="kakao-yellow font-semibold">실질적인 경제적 가치</span>로 변환하거나<br>
-                        <span class="kakao-yellow font-semibold">상응하는 경제적 가치</span>를 부여하는 과정
-                    </p>
-                </div>
+    <!-- Main Definition -->
+    <div class="definition-highlight rounded-3xl p-8 mb-12">
+        <div class="text-center">
+            <div class="w-20 h-20 gradient-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-gem text-3xl text-black"></i>
             </div>
-        </div>
-        
-        <!-- Transformation Process -->
-        <div class="grid grid-cols-5 gap-8 items-center mb-16">
-            <!-- Before: Raw Data -->
-            <div class="data-transform text-center">
-                <div class="w-24 h-24 bg-gray-700 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-database text-3xl text-gray-400"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-400 mb-4">원시 데이터</h3>
-                <p class="text-gray-500">비용 센터</p>
-                <p class="text-gray-500">정적 저장</p>
-                <p class="text-gray-500">잠재 부채</p>
-            </div>
-            
-            <!-- Arrow 1 -->
-            <div class="text-center">
-                <i class="fas fa-arrow-right text-4xl kakao-yellow"></i>
-            </div>
-            
-            <!-- Process -->
-            <div class="data-transform text-center">
-                <div class="w-24 h-24 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-cogs text-3xl text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-4">자산화 과정</h3>
-                <p class="text-gray-300">수집·정제</p>
-                <p class="text-gray-300">구조화·통합</p>
-                <p class="text-gray-300">분석·적용</p>
-            </div>
-            
-            <!-- Arrow 2 -->
-            <div class="text-center">
-                <i class="fas fa-arrow-right text-4xl kakao-yellow"></i>
-            </div>
-            
-            <!-- After: Data Asset -->
-            <div class="data-transform text-center">
-                <div class="w-24 h-24 gradient-accent rounded-3xl flex items-center justify-center mx-auto mb-6">
-                    <i class="fas fa-gem text-3xl text-black"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-4">데이터 자산</h3>
-                <p class="text-yellow-400">수익 창출</p>
-                <p class="text-yellow-400">동적 활용</p>
-                <p class="text-yellow-400">전략적 자산</p>
-            </div>
-        </div>
-        
-        <!-- Key Elements -->
-        <div class="grid grid-cols-3 gap-8">
-            <!-- Element 1 -->
-            <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-chart-line text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white">생산 요소</h3>
-                </div>
-                <p class="text-gray-300 text-center leading-relaxed">
-                    토지, 자본, 기술과 함께<br>
-                    <span class="kakao-yellow font-semibold">중요한 생산 요소</span>로 부상
-                </p>
-            </div>
-            
-            <!-- Element 2 -->
-            <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-coins text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white">데이터 배당금</h3>
-                </div>
-                <p class="text-gray-300 text-center leading-relaxed">
-                    목표는 <span class="kakao-yellow font-semibold">"데이터 요소의 배당금"</span><br>
-                    실현하는 것
-                </p>
-            </div>
-            
-            <!-- Element 3 -->
-            <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-rocket text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white">경쟁력 강화</h3>
-                </div>
-                <p class="text-gray-300 text-center leading-relaxed">
-                    시장 수요 이해, 제품 최적화,<br>
-                    <span class="kakao-yellow font-semibold">사용자 경험 향상</span>
+            <h2 class="text-3xl font-bold mb-6 text-white">핵심 정의</h2>
+            <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-yellow-500">
+                <p class="text-2xl font-light leading-relaxed text-gray-100">
+                    데이터를 <span class="kakao-yellow font-semibold">실질적인 경제적 가치</span>로 변환하거나<br>
+                    <span class="kakao-yellow font-semibold">상응하는 경제적 가치</span>를 부여하는 과정
                 </p>
             </div>
         </div>
-        
-        <!-- Slide Number -->
-        <div class="slide-number">06</div>
-        
-        <!-- Bottom Accent Bar -->
-        <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
     </div>
 
-    <script src="assets/js/slides.js"></script>
-    <script>
-        // Initialize slide navigation for slide 6
-        initSlideNavigation(6, 'slide05.html', 'slide07.html');
-    </script>
+    <!-- Transformation Process -->
+    <div class="grid grid-cols-5 gap-6 items-center mb-10">
+        <!-- Before: Raw Data -->
+        <div class="data-transform text-center">
+            <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-database text-2xl text-gray-400"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-400 mb-2">원시 데이터</h3>
+            <p class="text-sm text-gray-500">비용 센터</p>
+            <p class="text-sm text-gray-500">정적 저장</p>
+            <p class="text-sm text-gray-500">잠재 부채</p>
+        </div>
+
+        <!-- Arrow 1 -->
+        <div class="text-center">
+            <i class="fas fa-arrow-right text-3xl kakao-yellow"></i>
+        </div>
+
+        <!-- Process -->
+        <div class="data-transform text-center">
+            <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-cogs text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">자산화 과정</h3>
+            <p class="text-sm text-gray-300">수집·정제</p>
+            <p class="text-sm text-gray-300">구조화·통합</p>
+            <p class="text-sm text-gray-300">분석·적용</p>
+        </div>
+
+        <!-- Arrow 2 -->
+        <div class="text-center">
+            <i class="fas fa-arrow-right text-3xl kakao-yellow"></i>
+        </div>
+
+        <!-- After: Data Asset -->
+        <div class="data-transform text-center">
+            <div class="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-3">
+                <i class="fas fa-gem text-2xl text-black"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">데이터 자산</h3>
+            <p class="text-sm text-yellow-400">수익 창출</p>
+            <p class="text-sm text-yellow-400">동적 활용</p>
+            <p class="text-sm text-yellow-400">전략적 자산</p>
+        </div>
+    </div>
+
+    <!-- Key Elements -->
+    <div class="grid grid-cols-3 gap-8">
+        <!-- Element 1 -->
+        <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-chart-line text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">생산 요소</h3>
+            </div>
+            <p class="text-gray-300 text-center leading-relaxed">
+                토지, 자본, 기술과 함께<br>
+                <span class="kakao-yellow font-semibold">중요한 생산 요소</span>로 부상
+            </p>
+        </div>
+
+        <!-- Element 2 -->
+        <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-coins text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">데이터 배당금</h3>
+            </div>
+            <p class="text-gray-300 text-center leading-relaxed">
+                목표는 <span class="kakao-yellow font-semibold">"데이터 요소의 배당금"</span><br>
+                실현하는 것
+            </p>
+        </div>
+
+        <!-- Element 3 -->
+        <div class="bg-gray-900 rounded-2xl p-8 border border-gray-700">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-rocket text-2xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">경쟁력 강화</h3>
+            </div>
+            <p class="text-gray-300 text-center leading-relaxed">
+                시장 수요 이해, 제품 최적화,<br>
+                <span class="kakao-yellow font-semibold">사용자 경험 향상</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide Number -->
+    <div class="slide-number">06</div>
+
+    <!-- Bottom Accent Bar -->
+    <div class="absolute bottom-0 left-0 right-0 h-2 gradient-accent"></div>
+</div>
+
+<script src="assets/js/slides.js"></script>
+<script>
+    // Initialize slide navigation for slide 6
+    initSlideNavigation(6, 'slide05.html', 'slide07.html');
+</script>
 </body>
 </html>

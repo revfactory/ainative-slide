@@ -151,13 +151,10 @@
         </div>
         
         <!-- Real-time Streaming Architecture -->
-        <div class="grid grid-cols-4 gap-8 mb-16">
+        <div class="grid grid-cols-4 gap-8 mb-4">
             <!-- Data Sources -->
             <div class="streaming-card bg-gray-900 rounded-3xl p-8 data-stream">
                 <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-satellite-dish text-2xl text-white"></i>
-                    </div>
                     <h3 class="text-xl font-bold text-white">데이터 소스</h3>
                 </div>
                 
@@ -165,10 +162,6 @@
                     <div class="bg-gray-800 rounded-xl p-3">
                         <div class="real-time-indicator"></div>
                         <span class="text-gray-300 text-sm">사용자 행동 로그</span>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl p-3">
-                        <div class="real-time-indicator"></div>
-                        <span class="text-gray-300 text-sm">시장 데이터 피드</span>
                     </div>
                     <div class="bg-gray-800 rounded-xl p-3">
                         <div class="real-time-indicator"></div>
@@ -184,18 +177,12 @@
             <!-- Stream Processing -->
             <div class="streaming-card bg-gray-900 rounded-3xl p-8 data-stream">
                 <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-stream text-2xl text-white"></i>
-                    </div>
                     <h3 class="text-xl font-bold text-white">스트림 처리</h3>
                 </div>
                 
                 <div class="space-y-3">
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 실시간 필터링</p>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl p-3">
-                        <p class="text-gray-300 text-sm">• 데이터 정규화</p>
                     </div>
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 이벤트 집계</p>
@@ -209,18 +196,12 @@
             <!-- AI Analysis -->
             <div class="streaming-card bg-gray-900 rounded-3xl p-8 data-stream">
                 <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-brain text-2xl text-white"></i>
-                    </div>
                     <h3 class="text-xl font-bold text-white">AI 분석</h3>
                 </div>
                 
                 <div class="space-y-3">
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 패턴 인식</p>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl p-3">
-                        <p class="text-gray-300 text-sm">• 예측 분석</p>
                     </div>
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 자동 분류</p>
@@ -234,9 +215,6 @@
             <!-- Actions -->
             <div class="streaming-card bg-gray-900 rounded-3xl p-8">
                 <div class="text-center mb-6">
-                    <div class="w-16 h-16 gradient-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-bolt text-2xl text-black"></i>
-                    </div>
                     <h3 class="text-xl font-bold text-white">실시간 액션</h3>
                 </div>
                 
@@ -246,9 +224,6 @@
                     </div>
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 대시보드 업데이트</p>
-                    </div>
-                    <div class="bg-gray-800 rounded-xl p-3">
-                        <p class="text-gray-300 text-sm">• 자동 대응</p>
                     </div>
                     <div class="bg-gray-800 rounded-xl p-3">
                         <p class="text-gray-300 text-sm">• 리포트 생성</p>
@@ -261,10 +236,7 @@
         <div class="grid grid-cols-2 gap-12 mb-16">
             <!-- Event Timeline -->
             <div class="streaming-card bg-gray-900 rounded-3xl p-10">
-                <div class="text-center mb-8">
-                    <div class="w-20 h-20 bg-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-timeline text-3xl text-white"></i>
-                    </div>
+                <div class="text-center">
                     <h3 class="text-3xl font-bold text-white mb-4">실시간 이벤트 대응</h3>
                 </div>
                 
@@ -296,17 +268,6 @@
                     <div class="timeline-event">
                         <div class="bg-gray-800 rounded-xl p-4">
                             <div class="flex justify-between items-center mb-2">
-                                <span class="text-orange-400 font-semibold text-sm">14:24:12</span>
-                                <span class="text-green-400 text-xs">대응</span>
-                            </div>
-                            <p class="text-white font-semibold mb-1">자동 대체 경로 활성화</p>
-                            <p class="text-gray-300 text-sm">백업 결제 시스템으로 전환</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-event">
-                        <div class="bg-gray-800 rounded-xl p-4">
-                            <div class="flex justify-between items-center mb-2">
                                 <span class="text-orange-400 font-semibold text-sm">14:26:33</span>
                                 <span class="text-green-400 text-xs">해결</span>
                             </div>
@@ -319,26 +280,12 @@
             
             <!-- Performance Metrics -->
             <div class="streaming-card bg-gray-900 rounded-3xl p-10">
-                <div class="text-center mb-8">
-                    <div class="w-20 h-20 bg-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-tachometer-alt text-3xl text-white"></i>
-                    </div>
+                <div class="text-center">
                     <h3 class="text-3xl font-bold text-white mb-4">성능 메트릭</h3>
                 </div>
                 
                 <div class="space-y-8">
-                    <div class="streaming-architecture">
-                        <div class="stream-layer">데이터 처리량</div>
-                        <div class="flex justify-between items-center mb-2">
-                            <span class="text-white font-semibold">1초당 이벤트</span>
-                            <span class="text-orange-400 font-bold text-xl">1.2M</span>
-                        </div>
-                        <div class="throughput-meter">
-                            <div class="throughput-fill"></div>
-                        </div>
-                        <p class="text-gray-300 text-sm mt-2">현재 처리률: 85% (평상 대비)</p>
-                    </div>
-                    
+
                     <div class="bg-gray-800 rounded-2xl p-6">
                         <h4 class="text-xl font-semibold text-white mb-4">주요 성능 지표</h4>
                         <div class="space-y-4">
@@ -362,10 +309,6 @@
                     </div>
                     
                     <div class="bg-gray-800 rounded-2xl p-6 border-l-4 border-green-500">
-                        <h4 class="text-lg font-semibold text-white mb-3">
-                            <i class="fas fa-check-circle text-green-400 mr-3"></i>
-                            비즈니스 임팩트
-                        </h4>
                         <ul class="text-gray-300 text-sm space-y-2">
                             <li>• 서비스 장애 대응 시간 90% 단축</li>
                             <li>• 고객 만족도 15% 향상</li>
