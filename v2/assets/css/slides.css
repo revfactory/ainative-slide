@@ -7,7 +7,7 @@ body {
 
 .slide-container {
     width: 100%;
-    min-height: 100vh;
+    min-height: 1180px;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
     position: relative;
     overflow: hidden;
