@@ -44,6 +44,15 @@
                 데이터 중심 AI 네이티브 조직으로의 혁신 전략
             </p>
             
+            <!-- Audio Control Button -->
+            <div class="text-center mb-6">
+                <button onclick="toggleAudio()" class="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-3 px-6 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 flex items-center gap-3 mx-auto">
+                    <i id="audioIcon" class="fas fa-play text-lg"></i>
+                    <span id="audioText">음성 재생</span>
+                </button>
+                <audio id="slideAudio" src="../voice/slide01.mp3"></audio>
+            </div>
+            
             <!-- Presenter Information -->
             <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-2xl p-8 mb-16 border border-yellow-500">
                 <div class="flex items-center justify-center space-x-8">
@@ -107,6 +116,7 @@
     </div>
 
     <script src="assets/js/slides.js"></script>
+    <script src="assets/js/audio-player.js"></script>
     <script>
         // Initialize slide navigation for slide 1
         initSlideNavigation(1, null, 'slide02.html');

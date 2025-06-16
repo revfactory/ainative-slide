@@ -79,6 +79,15 @@
             <p class="text-2xl font-light text-gray-300">체계적이고 지속 가능한 데이터 가치 창출 로드맵</p>
         </div>
         
+        <!-- Audio Control Button -->
+        <div class="text-center mb-8">
+            <button onclick="toggleAudio()" class="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-3 px-6 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 flex items-center gap-3 mx-auto">
+                <i id="audioIcon" class="fas fa-play text-lg"></i>
+                <span id="audioText">음성 재생</span>
+            </button>
+            <audio id="slideAudio" src="../voice/slide09.mp3"></audio>
+        </div>
+        
         <!-- Framework Steps -->
         <div class="grid grid-cols-4 gap-8 mb-16 relative">
             <!-- Step 1: Discovery -->
@@ -271,6 +280,7 @@
     </div>
 
     <script src="assets/js/slides.js"></script>
+    <script src="assets/js/audio-player.js"></script>
     <script>
         // Initialize slide navigation for slide 9
         initSlideNavigation(9, 'slide08.html', 'slide10.html');

@@ -150,6 +150,15 @@
             <p class="text-2xl font-light text-gray-300">이벤트 기반 실시간 데이터 처리와 지능형 대응 시스템</p>
         </div>
         
+        <!-- Audio Control Button -->
+        <div class="text-center mb-8">
+            <button onclick="toggleAudio()" class="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-3 px-6 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 flex items-center gap-3 mx-auto">
+                <i id="audioIcon" class="fas fa-play text-lg"></i>
+                <span id="audioText">음성 재생</span>
+            </button>
+            <audio id="slideAudio" src="../voice/slide23.mp3"></audio>
+        </div>
+        
         <!-- Real-time Streaming Architecture -->
         <div class="grid grid-cols-4 gap-8 mb-4">
             <!-- Data Sources -->
@@ -327,6 +336,7 @@
     </div>
 
     <script src="assets/js/slides.js"></script>
+    <script src="assets/js/audio-player.js"></script>
     <script>
         // Initialize slide navigation for slide 23
         initSlideNavigation(23, 'slide22.html', 'slide24.html');

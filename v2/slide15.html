@@ -33,6 +33,15 @@
             <p class="text-2xl font-light text-gray-300">모든 구성원이 데이터를 자유롭게 활용할 수 있는 조직으로</p>
         </div>
         
+        <!-- Audio Control Button -->
+        <div class="text-center mb-8">
+            <button onclick="toggleAudio()" class="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-black font-bold py-3 px-6 rounded-full shadow-lg transform transition-all duration-200 hover:scale-105 flex items-center gap-3 mx-auto">
+                <i id="audioIcon" class="fas fa-play text-lg"></i>
+                <span id="audioText">음성 재생</span>
+            </button>
+            <audio id="slideAudio" src="../voice/slide15.mp3"></audio>
+        </div>
+        
         <!-- Vision Statement -->
         <div class="vision-card bg-gray-900 rounded-3xl p-12 mb-16 border-2 border-yellow-500">
             <div class="text-center">
@@ -133,6 +142,7 @@
     </div>
 
     <script src="assets/js/slides.js"></script>
+    <script src="assets/js/audio-player.js"></script>
     <script>
         // Initialize slide navigation for slide 15
         initSlideNavigation(15, 'slide14.html', 'slide16.html');
