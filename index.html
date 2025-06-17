@@ -801,6 +801,22 @@
             if (e.key === 'f' || e.key === 'F') {
                 toggleFullscreen();
             }
+            // Start presentation with Space or Enter
+            else if (e.key === ' ' || e.key === 'Enter') {
+                e.preventDefault();
+                startPresentation();
+            }
+        });
+        
+        // Add click anywhere to start presentation
+        document.addEventListener('click', function(e) {
+            // Check if click is not on a specific button or link
+            if (!e.target.closest('a') && 
+                !e.target.closest('button') && 
+                !e.target.closest('.slide-card')) {
+                // Start presentation
+                startPresentation();
+            }
         });
 
         // Progress bar animation on scroll
